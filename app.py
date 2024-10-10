@@ -1,25 +1,36 @@
 from flask import Flask, render_template, request, redirect, url_for, flash
-from extensions import db
-import os
+from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
-app.secret_key = '12345678'
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///site.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+app.secret_key = 'your_secret_key_here'  # Set this to a unique key
+db = SQLAlchemy(app)
 
-db.init_app(app)
+# Database model for BlogPost
+class BlogPost(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    title = db.Column(db.String(100), nullable=False)
+    content = db.Column(db.Text, nullable=False)
+    date_posted = db.Column(db.DateTime, nullable=False)
 
-from models import BlogPost
-
-# Create the database within the application context
+# Initialize the database
 with app.app_context():
     db.create_all()
 
+# Route for homepage that displays blog posts
 @app.route('/')
 def index():
     posts = BlogPost.query.order_by(BlogPost.date_posted.desc()).limit(5).all()
     return render_template('index.html', posts=posts)
 
+# Route for viewing an individual blog post
+@app.route('/blog/<int:post_id>')
+def view_post(post_id):
+    post = BlogPost.query.get_or_404(post_id)
+    return render_template('view_post.html', post=post)
+
+# Route for admin dashboard to create, edit, and delete posts
 @app.route('/admin/dashboard')
 def admin_dashboard():
     posts = BlogPost.query.all()
@@ -55,12 +66,6 @@ def delete_post(post_id):
     db.session.commit()
     flash('Post deleted successfully!', 'success')
     return redirect(url_for('admin_dashboard'))
-
-@app.route('/blog/<int:post_id>')
-def view_post(post_id):
-    post = BlogPost.query.get_or_404(post_id)
-    return render_template('view_post.html', post=post)
-
 
 if __name__ == '__main__':
     app.run(debug=True)
