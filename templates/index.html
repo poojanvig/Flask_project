@@ -1,6 +1,15 @@
-  {% extends 'base.html' %}
-     {% block title %}Home{% endblock %}
-     {% block content %}
-     <h2>Welcome to Our Real Estate Website</h2>
-     <p>Find your dream property with us.</p>
-     {% endblock %}
+{% extends 'base.html' %}
+{% block title %}Home{% endblock %}
+{% block content %}
+<h2>Welcome to Our Blog</h2>
+
+<h3>Latest Blog Posts</h3>
+<ul>
+    {% for post in posts %}
+    <li>
+        <h4><a href="{{ url_for('view_post', post_id=post.id) }}">{{ post.title }}</a></h4>
+<!--        <p>{{ post.content[:150] }}...</p> &lt;!&ndash; Only show an excerpt here &ndash;&gt;-->
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}
