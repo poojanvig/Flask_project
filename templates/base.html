@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+     <html lang="en">
+     <head>
+         <meta charset="UTF-8">
+         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+         <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+         <title>{% block title %}Real Estate Website{% endblock %}</title>
+     </head>
+     <body>
+         <header>
+             <h1>Welcome to Our Real Estate Website</h1>
+             <nav>
+                 <a href="{{ url_for('index') }}">Home</a>
+                 <a href="{{ url_for('projects') }}">Projects</a>
+                 <a href="{{ url_for('about') }}">About Us</a>
+                 <a href="{{ url_for('blog') }}">Blog</a>
+             </nav>
+         </header>
+         <main>
+             {% block content %}{% endblock %}
+         </main>
+         <footer>
+             <p>&copy; 2024 Real Estate Website</p>
+         </footer>
+     </body>
+     </html>
