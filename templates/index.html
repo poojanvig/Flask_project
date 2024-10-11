@@ -7,11 +7,42 @@
         <img src="{{ url_for('static', filename='images/hero.webp') }}" alt="Hero Image" class="hero-image">
     </section>
 
-    <!-- Main Content Section -->
-    <div class="container">
-        <h2>Welcome to Shree Mahalakshmi Constructions</h2>
-        <p>We are dedicated to building the future and making your dream projects come to life.</p>
-        <p>Explore our latest projects, learn about our services, and get in touch for more information.</p>
-    </div>
+    <!-- About Section -->
+    <section class="about-section">
+        <div class="about-text">
+            <p>Building Spaces for Tomorrow's Future</p>
+            <p>Since our inception in 2013, we have been dedicated to creating residential spaces that blend comfort with luxury, tradition with modernity, and dreams with reality. Our portfolio includes a diverse range of projects that cater to an array of needs and preferences, each crafted with meticulous attention to detail and a deep respect for our customers' aspirations.</p>
+        </div>
+        <div class="achievements">
+            <div class="achievement">
+                <h2>3+</h2>
+                <p>Projects</p>
+            </div>
+            <div class="achievement">
+                <h2>1,66,800 Sq.Ft</h2>
+                <p>Of Ongoing, Completed & Upcoming Projects</p>
+            </div>
+            <div class="achievement">
+                <h2>25+</h2>
+                <p>Happy Families</p>
+            </div>
+        </div>
+    </section>
 
+    <section class="image-section">
+        <img src="{{ url_for('static', filename='images/space.webp') }}" alt="City Buildings Looking Up" class="image-full">
+    </section>
+
+  <!-- Stay Updated Section -->
+    <section class="stay-updated">
+        <h2 class="stay-updated-title">STAY UPDATED</h2>
+        <p>Keep up with the latest in real estate in Mumbai and developments at Shree Mahalakshmi Constructions</p>
+        <form name="stay-updated" method="POST" data-netlify="true">
+            <input type="hidden" name="form-name" value="stay-updated">
+            <div class="subscription-form">
+                <input type="email" name="email" placeholder="EMAIL ADDRESS" class="email-input" required>
+                <button type="submit" class="submit-button">SUBMIT</button>
+            </div>
+        </form>
+    </section>
 {% endblock %}
