@@ -335,7 +335,81 @@ body {
     .submit-button:hover {
         background-color: #a47630;
     }
+/* Line Breaker Styles */
+.line-breaker {
+    border: none; /* Remove default border style */
+    border-top: 1px solid #000; /* Add a custom line */
+    margin: 30px 0; /* Add vertical spacing */
+    width: 100%; /* Adjust width if you don't want it full-width */
+    margin-left: auto; /* Center align the line */
+    margin-right: auto; /* Center align the line */
+}
 
+/* Locate Us Section Styles */
+.locate-us {
+    text-align: center;
+    padding: 50px;
+    background-color: #fff;
+    margin-top: 50px;
+}
+
+.locate-us-title {
+    font-size: 2em;
+    color: #c59542; /* Gold-like color */
+    font-weight: 700;
+    margin-bottom: 20px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px; /* Adjust the space between the text and the lines */
+}
+
+.locate-us-title::before,
+.locate-us-title::after {
+    content: "";
+    width: 505px;
+    height: 1px;
+    background: #000;
+}
+
+.locate-us-subtitle {
+    font-size: 1.2em;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.locate-us-image {
+    margin: 0 auto;
+    max-width: 1000px; /* Adjust width to fit the image properly */
+    padding: 20px 0;
+}
+
+.map-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover; /* Ensure the image covers the entire area */
+}
+
+/* Know More Button Styles */
+.know-more-button-container {
+    margin-top: 20px;
+}
+
+.know-more-button {
+    padding: 15px 30px;
+    font-size: 1em;
+    color: #fff;
+    background-color: #c59542; /* Gold-like color */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.know-more-button:hover {
+    background-color: #a47630;
+}
 
 
 
@@ -363,6 +437,25 @@ body {
          .email-input {
             width: 70%;
         }
+  .locate-us-title::before,
+    .locate-us-title::after {
+        width: 50px; /* Shorter lines for smaller screens */
+    }
+
+    .locate-us-image {
+        max-width: 100%; /* Increase the width for mobile devices */
+    }
+
+    .map-image {
+         width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+
+    .know-more-button {
+        width: 100%; /* Full-width button on smaller devices */
+    }
 
     }
 
@@ -409,5 +502,24 @@ body {
             flex-direction: column;
             gap: 20px;
         }
+  .locate-us-title::before,
+    .locate-us-title::after {
+        width: 50px; /* Shorter lines for smaller screens */
+    }
+
+    .locate-us-image {
+        max-width: 100%; /* Increase the width for mobile devices */
+    }
+
+    .map-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+
+    .know-more-button {
+        width: 100%; /* Full-width button on smaller devices */
+    }
 
     }
