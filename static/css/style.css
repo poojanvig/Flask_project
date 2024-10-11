@@ -692,7 +692,10 @@ body {
         .featured-projects {
         padding: 30px;
     }
-
+    .project-link {
+        flex: 0 0 100%; /* Ensure only 1 project is visible at a time on very small screens */
+        padding: 0; /* Remove padding for small screens to give a full-width effect */
+    }
     .featured-projects-title {
         font-size: 1.5em; /* Reduce title font size for very small screens */
     }
