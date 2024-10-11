@@ -20,3 +20,22 @@ window.onscroll = function() {
         logoText.style.display = "block"; // Show logo text when at top
     }
 };
+// JavaScript to Control the Carousel
+let currentIndex = 0;
+
+function moveSlide(direction) {
+    const carousel = document.querySelector('.carousel');
+    const projects = document.querySelectorAll('.carousel .project');
+    const totalProjects = projects.length;
+
+    currentIndex += direction;
+
+    if (currentIndex < 0) {
+        currentIndex = totalProjects - 1;
+    } else if (currentIndex >= totalProjects) {
+        currentIndex = 0;
+    }
+
+    const offset = -(currentIndex * projects[0].offsetWidth);
+    carousel.style.transform = `translateX(${offset}px)`;
+}

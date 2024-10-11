@@ -67,5 +67,17 @@ def delete_post(post_id):
     flash('Post deleted successfully!', 'success')
     return redirect(url_for('admin_dashboard'))
 
+@app.route('/project/saburi')
+def saburi_project():
+    return render_template('saburi.html')
+
+@app.route('/project/maha_kunj')
+def maha_kunj_project():
+    return render_template('maha_kunj.html')
+
+@app.route('/project/maha_res')
+def maha_res_project():
+    return render_template('maha_res.html')
+
 if __name__ == '__main__':
     app.run(debug=True)

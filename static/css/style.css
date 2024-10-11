@@ -413,6 +413,141 @@ body {
 
 
 
+/* Featured Projects Section Styles */
+.featured-projects {
+    text-align: center;
+    padding: 50px;
+    background-color: #fff;
+    margin-top: 50px;
+}
+
+.featured-projects-title {
+    font-size: 2em;
+    color: #c59542; /* Gold-like color */
+    font-weight: 700;
+    margin-bottom: 20px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.featured-projects-title::before,
+.featured-projects-title::after {
+    content: "";
+    width: 425px; /* Adjust this value to decrease or increase line length */
+    height: 1px;
+    background: #000;
+}
+
+.featured-projects-subtitle {
+    font-size: 1.2em;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.carousel-container {
+    position: relative;
+    max-width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.carousel {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    will-change: transform;
+}
+
+.project-link {
+    text-decoration: none; /* Remove underline */
+    color: inherit; /* Inherit color from the parent container */
+}
+.project {
+    flex: 0 0 33%; /* Default - display 3 projects at a time */
+    box-sizing: border-box;
+    padding: 0 20px;
+    transition: transform 0.3s, box-shadow 0.3s;
+
+}
+.project:hover {
+    transform: scale(1.01); /* Slightly increase size on hover */
+    /*box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); !* Add shadow on hover *!*/
+}
+
+.project img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.project h3 {
+    margin-top: 15px;
+    font-size: 1.4em;
+    color: #002b49;
+}
+
+.project p {
+    font-size: 1.1em;
+    color: #666;
+}
+
+.arrow-buttons {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.carousel-arrow {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    border: 2px solid #c59542; /* Gold-like border */
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s;
+    color: #999; /* Initial grey color for arrow icon */
+    font-size: 1.5em;
+}
+
+.carousel-arrow:hover {
+    background-color: #c59542; /* Change background color on hover */
+    border-color: #a47630; /* Darker shade for the border on hover */
+    color: #fff; /* White color for the arrow icon on hover */
+}
+
+.carousel-arrow:focus {
+    outline: none;
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+    .project {
+        flex: 0 0 50%; /* Display 2 projects at a time on medium screens */
+    }
+
+    .featured-projects-title::before,
+    .featured-projects-title::after {
+        width: 250px; /* Reduce the length of the lines for smaller screens */
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
     /* Responsive Styles */
@@ -437,24 +572,62 @@ body {
          .email-input {
             width: 70%;
         }
-  .locate-us-title::before,
+     .locate-us-title::before,
     .locate-us-title::after {
         width: 50px; /* Shorter lines for smaller screens */
     }
 
     .locate-us-image {
-        max-width: 100%; /* Increase the width for mobile devices */
+        max-width: 100%;
+        padding: 10px; /* Reduce padding to give more space for the image */
     }
 
     .map-image {
-         width: 100%;
-        height: 100%;
-        object-fit: cover;
-        display: block;
+        height: auto;
+        width: 100%;
+        max-height: 50vh; /* Increase the image height to occupy more space on the screen */
     }
 
     .know-more-button {
         width: 100%; /* Full-width button on smaller devices */
+    }
+      .project {
+        flex: 0 0 100%; /* Display 1 project at a time on smaller screens */
+        padding: 0 10px; /* Reduce padding for smaller screens */
+    }
+
+    .featured-projects-title {
+        font-size: 1.8em; /* Reduce font size */
+    }
+
+    .featured-projects-title::before,
+    .featured-projects-title::after {
+        width: 150px; /* Further reduce the line length */
+    }
+
+    .carousel-arrow {
+        width: 40px; /* Reduce size of arrows */
+        height: 40px;
+        font-size: 1.2em; /* Smaller icon size */
+    }
+      .project-link {
+        flex: 0 0 100%; /* Display 1 project at a time on smaller screens */
+        padding: 0 10px; /* Reduce padding for smaller screens */
+    }
+
+    .featured-projects-title {
+        font-size: 1.8em; /* Reduce font size */
+    }
+
+    .featured-projects-title::before,
+    .featured-projects-title::after {
+        width: 150px; /* Further reduce the line length */
+    }
+
+    .carousel-arrow {
+        width: 40px; /* Reduce size of arrows */
+        height: 40px;
+        font-size: 1.2em; /* Smaller icon size */
     }
 
     }
@@ -502,24 +675,53 @@ body {
             flex-direction: column;
             gap: 20px;
         }
-  .locate-us-title::before,
-    .locate-us-title::after {
-        width: 50px; /* Shorter lines for smaller screens */
-    }
-
-    .locate-us-image {
-        max-width: 100%; /* Increase the width for mobile devices */
+ .locate-us-image {
+        max-width: 100%;
+        padding: 5px; /* Further reduce padding for very small screens */
     }
 
     .map-image {
+        height: auto;
         width: 100%;
-        height: 100%;
-        object-fit: cover;
-        display: block;
+        max-height: 60vh; /* Increase the image height more on smaller screens */
     }
 
     .know-more-button {
         width: 100%; /* Full-width button on smaller devices */
+    }
+        .featured-projects {
+        padding: 30px;
+    }
+
+    .featured-projects-title {
+        font-size: 1.5em; /* Reduce title font size for very small screens */
+    }
+
+    .featured-projects-subtitle {
+        font-size: 1em; /* Smaller subtitle font size */
+    }
+
+    .carousel-arrow {
+        width: 30px; /* Further reduce size of arrows */
+        height: 30px;
+        font-size: 1em;
+    }
+       .featured-projects {
+        padding: 30px;
+    }
+
+    .featured-projects-title {
+        font-size: 1.5em; /* Reduce title font size for very small screens */
+    }
+
+    .featured-projects-subtitle {
+        font-size: 1em; /* Smaller subtitle font size */
+    }
+
+    .carousel-arrow {
+        width: 30px; /* Further reduce size of arrows */
+        height: 30px;
+        font-size: 1em;
     }
 
     }
