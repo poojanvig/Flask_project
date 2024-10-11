@@ -11,9 +11,11 @@
 <body>
     <!-- Navigation Bar -->
     <nav class="navbar" id="navbar">
-        <button class="menu-icon" aria-label="Toggle navigation menu" onclick="toggleMenu()">
-            ☰
-        </button>
+       <button class="menu-icon" aria-label="Toggle navigation menu" onclick="toggleMenu()">
+    <span class="menu-icon-symbol">☰</span>
+    <span class="menu-text">Menu</span>
+</button>
+
         <div class="logo-container">
             <img src="{{ url_for('static', filename='images/logo_noName.png') }}" alt="Shree Mahalakshmi Constructions Logo" id="mainLogo">
             <div class="logo-text" id="mainName">Shree Mahalakshmi Constructions</div>

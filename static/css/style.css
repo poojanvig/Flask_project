@@ -65,6 +65,7 @@ body {
 }
 
 .logo-text {
+    padding-top: 5px;
     font-size: 1.2em;
     color: var(--brown-color);
     transition: opacity 0.3s ease;
@@ -83,6 +84,13 @@ body {
     cursor: pointer;
     background: none;
     border: none;
+    padding: 5px;
+}
+
+/* Menu Text Styles */
+.menu-text {
+    margin-left: 5px;
+    font-size: 1em; /* Adjust as needed */
 }
 
 /* Book Visit Button */
@@ -149,7 +157,7 @@ body {
 
 /* Responsive Styles */
 @media (max-width: 768px) {
-    .menu-icon .menu-text {
+    .menu-text {
         display: none;
     }
 
