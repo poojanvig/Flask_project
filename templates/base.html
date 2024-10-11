@@ -1,56 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-    <title>{% block title %}Blog Page{% endblock %}</title>
+    <title>Shree Mahalakshmi Constructions</title>
 </head>
+
 <body>
     <!-- Navigation Bar -->
     <nav class="navbar" id="navbar">
-        <button class="menu-icon" aria-label="Toggle navigation menu">
-            <span class="menu-text">☰ MENU</span>
+        <button class="menu-icon" aria-label="Toggle navigation menu" onclick="toggleMenu()">
+            ☰
         </button>
-        <div class="logo">
-            <img src="{{ url_for('static', filename='images/logo_noName.png') }}" alt="Shree Mahalakshmi Constructions Logo">
-            <div class="logo-text" id="logoText">Shree Mahalakshmi Constructions</div>
+        <div class="logo-container">
+            <img src="{{ url_for('static', filename='images/logo_noName.png') }}" alt="Shree Mahalakshmi Constructions Logo" id="mainLogo">
+            <div class="logo-text" id="mainName">Shree Mahalakshmi Constructions</div>
         </div>
-        <div class="book-visit">
-            <button id="bookVisitButton">BOOK A SITE VISIT</button>
+        <div class="book-visit" id="bookVisit">
+            <button>BOOK A SITE VISIT</button>
         </div>
     </nav>
 
     <!-- Side Menu -->
     <aside class="side-menu" id="sideMenu">
-        <button class="close-menu" aria-label="Close navigation menu">&times; CLOSE</button>
+        <button class="close-menu" aria-label="Close navigation menu" onclick="toggleMenu()">&times; CLOSE</button>
         <nav>
             <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/about">About Us</a></li>
-                <li><a href="/projects">Projects</a></li>
-                <li><a href="/services">Services</a></li>
-                <li><a href="/contact">Contact</a></li>
-                <li class="menu-book-visit" id="menuBookVisit">
-                    <a href="#" onclick="bookSiteVisit()">Book a Site Visit</a>
-                </li>
-                <li><a href="/admin/dashboard">Admin Dashboard</a></li>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Projects</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contact</a></li>
+                <li class="mobile-only"><a href="#">BOOK A SITE VISIT</a></li>
             </ul>
         </nav>
     </aside>
 
-    <main>
-        <div class="container">
-            {% block content %}{% endblock %}
-        </div>
+    <main class="content">
+        {% block content %}{% endblock %}
     </main>
-
-    <footer>
-        <div class="container">
-            <p>&copy; 2024 Blog Page. All rights reserved.</p>
-        </div>
-    </footer>
 
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 </body>
+
 </html>

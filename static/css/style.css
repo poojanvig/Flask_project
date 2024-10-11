@@ -20,18 +20,61 @@ body {
     padding: 20px;
     background-color: white;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
-    position: sticky;
+    position: fixed;
     top: 0;
     width: 100%;
-    z-index: 1000;
+    z-index: 10;
+    transition: all 0.3s ease;
 }
 
-.navbar.shrink {
+/* Content Styles */
+/* Content Styles */
+.content {
+    margin-top: 130px; /* This should be greater than or equal to the height of the navbar */
+    padding: 20px; /* Optional: Adjust as needed for spacing between navbar and content */
+}
+
+
+.navbar.small {
     padding: 10px 20px;
+    height: 70px;
 }
 
-/* Menu Icon Styles */
+.logo-container {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .content {
+        margin-top: 80px; /* Adjust this value for small screens */
+    }
+}
+
+.logo-container img {
+    height: 80px;
+    transition: height 0.3s ease;
+}
+
+.navbar.small .logo-container img {
+    height: 60px;
+}
+
+.logo-text {
+    font-size: 1.2em;
+    color: var(--brown-color);
+    transition: opacity 0.3s ease;
+}
+
+.navbar.small .logo-text {
+    opacity: 0;
+}
+
+/* Menu Icon */
 .menu-icon {
     display: flex;
     align-items: center;
@@ -40,48 +83,11 @@ body {
     cursor: pointer;
     background: none;
     border: none;
-    margin-left: 20px;
-}
-
-.menu-text {
-    margin-left: 5px;
-    font-size: 0.8em;
-}
-
-/* Logo Styles */
-.logo {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 0;
-}
-
-.logo img {
-    height: 80px;
-    max-width: 100%;
-    transition: height 0.3s ease;
-}
-
-.navbar.shrink .logo img {
-    height: 70px;
-}
-
-/* Adjust logo text visibility */
-.logo-text {
-    font-size: 1.2em;
-    color: var(--brown-color);
-    text-align: center;
-    margin-top: 5px;
-    transition: opacity 0.3s ease;
-}
-
-.navbar.shrink .logo-text {
-    opacity: 0;
 }
 
 /* Book Visit Button */
 .book-visit {
-    margin-right: 15px;
+    margin-right: 20px;
 }
 
 .book-visit button {
@@ -99,7 +105,7 @@ body {
     color: white;
 }
 
-/* Side Menu Styles */
+/* Side Menu */
 .side-menu {
     position: fixed;
     left: -250px;
@@ -109,7 +115,7 @@ body {
     background-color: var(--brown-color);
     color: white;
     padding: 20px;
-    transition: left 0.3s;
+    transition: left 0.3s ease;
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
     z-index: 1001;
 }
@@ -136,7 +142,6 @@ body {
 .close-menu {
     cursor: pointer;
     font-size: 1.5em;
-    margin-bottom: 20px;
     background: none;
     border: none;
     color: white;
@@ -144,7 +149,44 @@ body {
 
 /* Responsive Styles */
 @media (max-width: 768px) {
+    .menu-icon .menu-text {
+        display: none;
+    }
+
     .book-visit {
         display: none;
+    }
+
+    .logo-container {
+        flex-grow: 1;
+    }
+
+    .navbar.small .logo-container .logo-text {
+        display: none;
+    }
+
+    .mobile-only {
+        display: block;
+    }
+}
+
+@media (min-width: 769px) {
+    .mobile-only {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .menu-icon {
+        margin-left: 10px;
+    }
+
+    .logo-container img {
+        height: 50px;
+    }
+
+    .navbar.small {
+        padding: 5px 10px;
+        height: 60px;
     }
 }

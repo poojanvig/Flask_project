@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo Website with Sliding Navbar</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .navbar {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #fff;
+            padding: 10px 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 10;
+            transition: padding 0.3s, height 0.3s, filter 0.5s;
+        }
+        .navbar.small {
+            padding: 5px 20px;
+            height: 60px;
+        }
+        .navbar.blur {
+            filter: blur(5px);
+        }
+        .navbar .left-section {
+            position: absolute;
+            left: 20px;
+        }
+        .logo-container {
+            text-align: center;
+        }
+        .logo-container img {
+            height: 150px;
+            transition: height 0.3s;
+        }
+        .navbar.small .logo-container img {
+            height: 100px;
+        }
+        .logo-container .name {
+            font-size: 20px;
+            color: #333;
+            margin-top: -25px;
+            transition: font-size 0.3s, margin-top 0.3s;
+        }
+        .navbar.small .logo-container .name {
+            font-size: 16px;
+            margin-top: -15px;
+        }
+        .menu-button {
+            font-size: 25px;
+            cursor: pointer;
+            background: none;
+            border: none;
+        }
+        .menu {
+            height: 100%;
+            width: 250px;
+            position: fixed;
+            z-index: 11;
+            top: 0;
+            left: -250px;
+            background-color: #fff;
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 60px;
+            box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+        }
+        .menu .logo {
+            position: relative;
+            text-align: left;
+            padding: 40px 20px;
+        }
+        .menu .logo img {
+            height: 200px;
+        }
+        .menu a {
+            padding: 16px 8px 16px 32px; /* Added padding for more space */
+            text-decoration: none;
+            font-size: 18px;
+            color: #333;
+            display: block;
+            transition: 0.3s;
+        }
+        .menu a:hover {
+            color: #007BFF;
+            text-decoration: underline; /* Underline on hover */
+        }
+        .menu .close-button {
+            position: absolute;
+            top: 20px;
+            right: 25px;
+            font-size: 36px;
+            cursor: pointer;
+        }
+        .content {
+            padding: 100px 20px;
+            max-width: 800px;
+            margin: 0 auto;
+            transition: filter 0.5s;
+        }
+        .blur {
+            filter: blur(5px);
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar" id="navbar">
+        <div class="left-section">
+            <button class="menu-button" onclick="toggleMenu()">☰ Menu</button>
+        </div>
+        <div class="logo-container">
+            <img src="/Users/poojanvig/Desktop/pythonProject2/Blue and Yellow Elegant Modern Class Academy Logo.png" alt="Logo" id="mainLogo">
+            <div class="name" id="mainName">Shree Mahalakshmi Construction</div>
+        </div>
+    </div>
+
+    <div id="menu" class="menu">
+        <div class="logo">
+            <img src="/Users/poojanvig/Desktop/pythonProject2/Logo Open File-01.png" alt="Logo">
+        </div>
+        <a href="javascript:void(0)" class="close-button" onclick="toggleMenu()">×</a>
+        <a href="#home">Home</a>
+        <a href="#projects">Projects</a>
+        <a href="#about">About</a>
+        <a href="#buyers-guide">Buyers Guide</a>
+        <a href="#insights">Insights</a>
+        <a href="#contact">Contact Us</a>
+    </div>
+
+    <div class="content" id="content">
+        <h1>Welcome to Our Website</h1>
+
+    </div>
+
+    <script>
+        function toggleMenu() {
+            var menu = document.getElementById("menu");
+            var content = document.getElementById("content");
+            var navbar = document.getElementById("navbar");
+            if (menu.style.left === "0px") {
+                menu.style.left = "-250px";
+                content.classList.remove("blur");
+                navbar.classList.remove("blur");
+            } else {
+                menu.style.left = "0px";
+                content.classList.add("blur");
+                navbar.classList.add("blur");
+            }
+        }
+
+        window.onscroll = function() {
+            var nameElement = document.getElementById("mainName");
+            var navbar = document.getElementById("navbar");
+            if (document.documentElement.scrollTop > 50) {
+                nameElement.style.display = "none";
+                navbar.classList.add("small");
+            } else {
+                nameElement.style.display = "block";
+                navbar.classList.remove("small");
+            }
+        };
+    </script>
+</body>
+</html>
