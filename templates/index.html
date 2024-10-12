@@ -93,6 +93,70 @@
     </div>
 </section>
 
+<section class="blogs-news">
+    <h2 class="blogs-news-title">BLOGS AND NEWS</h2>
+    <p class="blogs-news-subtitle">Read our latest blogs to stay informed</p>
+    <div class="carousel-container">
+        <div class="carousel">
+            {% for post in blog_posts %}
+            <div class="blog-post">
+                <a href="{{ url_for('view_blog', blog_id=post.id) }}">
+                    <img src="{{ url_for('static', filename='uploads/' + post.image) }}" alt="{{ post.title }}">
+                    <h3>{{ post.title }}</h3>
+                </a>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="arrow-buttons">
+        <button class="carousel-arrow left-arrow" onclick="moveBlogSlide(-1)">&#8249;</button>
+        <button class="carousel-arrow right-arrow" onclick="moveBlogSlide(1)">&#8250;</button>
+    </div>
+</section>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<section class="contact-section">
+    <div class="contact-info">
+        <h2>CONTACT FOR SALE IN MUMBAI</h2>
+    </div>
+    <div class="contact-form">
+        <form name="contact" method="POST" data-netlify="true">
+            <input type="hidden" name="form-name" value="contact">
+
+            <div class="form-group">
+                <input type="text" name="name" placeholder="Your Name" required>
+            </div>
+
+            <div class="form-group">
+                <input type="email" name="email" placeholder="Your Email" required>
+            </div>
+
+            <div class="form-group">
+                <input type="tel" name="phone" placeholder="Phone Number" required>
+            </div>
+
+            <div class="form-group">
+                <textarea name="message" placeholder="Your Message" rows="6"></textarea>
+            </div>
+
+            <div class="form-group-checkbox">
+                <input type="checkbox" name="authorization" id="authorization" required>
+                <label for="authorization">
+                    I authorize Shree Mahalakshmi Constructions and its representatives to contact me with updates and notifications via Email, SMS, WhatsApp, and Call. This will override the registry on DND/NDNC.
+                </label>
+            </div>
+
+            <button type="submit" class="submit-button">SUBMIT</button>
+        </form>
+    </div>
+</section>
+
 
 
 {% endblock %}

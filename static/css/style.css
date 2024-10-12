@@ -524,6 +524,273 @@ body {
 .carousel-arrow:focus {
     outline: none;
 }
+.blogs-news {
+    text-align: center;
+    padding: 50px;
+    background-color: #fff;
+    margin-top: 50px;
+}
+
+.blogs-news-title {
+    font-size: 2em;
+    color: #c59542; /* Gold-like color */
+    font-weight: 700;
+    margin-bottom: 20px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.blogs-news-title::before,
+.blogs-news-title::after {
+    content: "";
+    width: 425px; /* Adjust this value to decrease or increase line length */
+    height: 1px;
+    background: #000;
+}
+
+.blogs-news-subtitle {
+    font-size: 1.2em;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.carousel-container {
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.carousel {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    will-change: transform;
+}
+
+.blog-post {
+    flex: 0 0 33%; /* Default - display 3 blog posts at a time */
+    box-sizing: border-box;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.blog-post img {
+    width: 100%;
+    height: 200px; /* Set a fixed height to maintain uniform size */
+    object-fit: cover; /* Ensures the entire image fits without distortion */
+    border-radius: 10px;
+    background-color: #f0f0f0; /* Adds a background color in case the aspect ratio leaves blank spaces */
+}
+
+
+.blog-post h3 {
+    margin-top: 15px;
+    font-size: 1.4em;
+    color: #002b49;
+    text-align: center;
+}
+
+.arrow-buttons {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.carousel-arrow {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    border: 2px solid #c59542; /* Gold-like border */
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s;
+    color: #999; /* Initial grey color for arrow icon */
+    font-size: 1.5em;
+}
+.contact-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 50px;
+    background-color: #fff;
+    gap: 30px;
+    align-items: flex-start;
+}
+
+.contact-info {
+    flex: 1;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding-top: 60px; /* Reduce padding to fit all screen sizes */
+}
+
+.contact-info h2 {
+    font-size: 2em;
+    color: #c59542; /* Gold-like color */
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.contact-form {
+    flex: 2;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 15px;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #666;
+}
+
+.form-group-checkbox {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 0.9em;
+    color: #666;
+}
+
+.submit-button {
+    width: 150px;
+    padding: 15px 20px;
+    font-size: 1em;
+    color: #fff;
+    background-color: #d7993d; /* Gold-like color */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    align-self: flex-start;
+    transition: background-color 0.3s;
+}
+
+.submit-button:hover {
+    background-color: #a47630; /* Darker gold shade on hover */
+}
+.footer-section {
+    background-color: #000; /* Black background */
+    color: #fff; /* White text */
+    padding: 50px 20px;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.footer-column {
+    flex: 1;
+    min-width: 220px;
+}
+
+.footer-column h3 {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+    font-weight: 700;
+    color: #c59542; /* Gold-like color for headings */
+}
+
+.footer-column p,
+.footer-column ul,
+.footer-column form {
+    margin-bottom: 20px;
+    font-size: 1em;
+    color: #fff;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 10px;
+    color: #ccc;
+}
+
+.footer-column ul li:hover {
+    color: #c59542; /* Gold-like color on hover */
+    cursor: pointer;
+}
+
+.footer-column form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: none;
+    border-bottom: 2px solid #fff;
+    background: transparent;
+    color: #fff;
+}
+
+.footer-column form input::placeholder {
+    color: #ccc;
+}
+
+.submit-button {
+    padding: 15px 20px;
+    font-size: 1em;
+    color: #fff;
+    background-color: #c59542; /* Gold-like color */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    align-self: flex-start;
+    transition: background-color 0.3s;
+}
+
+.submit-button:hover {
+    background-color: #a47630; /* Darker gold shade on hover */
+}
+
+.footer-bottom {
+    text-align: center;
+    border-top: 1px solid #f2eded;
+    padding-top: 20px;
+    margin-top: 20px;
+    font-size: 0.9em;
+    color: #cabdbd;
+}
+
+
+
+
+
+
+
+
+
 
 /* Responsive Styles */
 @media (max-width: 1024px) {
@@ -535,7 +802,17 @@ body {
     .featured-projects-title::after {
         width: 250px; /* Reduce the length of the lines for smaller screens */
     }
+     .blog-post {
+        flex: 0 0 50%; /* Display 2 blog posts at a time on medium screens */
+    }
+
+    .blogs-news-title::before,
+    .blogs-news-title::after {
+        width: 250px; /* Reduce the length of the lines for smaller screens */
+    }
+
 }
+
 
 
 
@@ -629,7 +906,62 @@ body {
         height: 40px;
         font-size: 1.2em; /* Smaller icon size */
     }
+   .blog-post {
+        flex: 0 0 100%; /* Display 1 blog post at a time on smaller screens */
+        padding: 0 10px; /* Adjust padding for smaller screens */
+    }
 
+    .carousel-container {
+        max-width: 90%; /* Slightly reduce the container width for a better look on smaller screens */
+        margin: 0 auto;
+    }
+
+    .blogs-news-title {
+        font-size: 1.8em; /* Reduce font size for title */
+    }
+
+    .blogs-news-title::before,
+    .blogs-news-title::after {
+        width: 150px; /* Further reduce the line length */
+    }
+
+    .carousel-arrow {
+        width: 40px; /* Reduce size of arrows */
+        height: 40px;
+        font-size: 1.2em; /* Smaller icon size */
+    }
+     .contact-section {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+        gap: 20px;
+    }
+
+    .contact-info {
+        padding-top: 20px;
+        text-align: center;
+    }
+
+    .contact-info h2 {
+        font-size: 1.8em;
+    }
+
+    .contact-form {
+        width: 100%;
+    }
+   .footer-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .footer-column {
+        min-width: 100%;
+        text-align: center;
+    }
+
+    .footer-column form {
+        text-align: left;
+    }
     }
 
 
@@ -675,56 +1007,95 @@ body {
             flex-direction: column;
             gap: 20px;
         }
- .locate-us-image {
-        max-width: 100%;
-        padding: 5px; /* Further reduce padding for very small screens */
+         .locate-us-image {
+                max-width: 100%;
+                padding: 5px; /* Further reduce padding for very small screens */
+            }
+
+            .map-image {
+                height: auto;
+                width: 100%;
+                max-height: 60vh; /* Increase the image height more on smaller screens */
+            }
+
+            .know-more-button {
+                width: 100%; /* Full-width button on smaller devices */
+            }
+                .featured-projects {
+                padding: 30px;
+            }
+            .project-link {
+                flex: 0 0 100%; /* Ensure only 1 project is visible at a time on very small screens */
+                padding: 0; /* Remove padding for small screens to give a full-width effect */
+            }
+            .featured-projects-title {
+                font-size: 1.5em; /* Reduce title font size for very small screens */
+            }
+
+            .featured-projects-subtitle {
+                font-size: 1em; /* Smaller subtitle font size */
+            }
+
+            .carousel-arrow {
+                width: 30px; /* Further reduce size of arrows */
+                height: 30px;
+                font-size: 1em;
+            }
+               .featured-projects {
+                padding: 30px;
+            }
+
+            .featured-projects-title {
+                font-size: 1.5em; /* Reduce title font size for very small screens */
+            }
+
+            .featured-projects-subtitle {
+                font-size: 1em; /* Smaller subtitle font size */
+            }
+
+            .carousel-arrow {
+                width: 30px; /* Further reduce size of arrows */
+                height: 30px;
+                font-size: 1em;
+            }
+           .blogs-news {
+                padding: 30px;
+            }
+
+            .blogs-news-title {
+                font-size: 1.5em; /* Reduce title font size for very small screens */
+            }
+
+            .blogs-news-subtitle {
+                font-size: 1em; /* Smaller subtitle font size */
+            }
+              .contact-info h2 {
+        font-size: 1.5em;
     }
 
-    .map-image {
-        height: auto;
+    .submit-button {
         width: 100%;
-        max-height: 60vh; /* Increase the image height more on smaller screens */
+        text-align: center;
+    }
+     .footer-section {
+        padding: 30px 10px;
     }
 
-    .know-more-button {
-        width: 100%; /* Full-width button on smaller devices */
-    }
-        .featured-projects {
-        padding: 30px;
-    }
-    .project-link {
-        flex: 0 0 100%; /* Ensure only 1 project is visible at a time on very small screens */
-        padding: 0; /* Remove padding for small screens to give a full-width effect */
-    }
-    .featured-projects-title {
-        font-size: 1.5em; /* Reduce title font size for very small screens */
+    .footer-column h3 {
+        font-size: 1.2em;
     }
 
-    .featured-projects-subtitle {
-        font-size: 1em; /* Smaller subtitle font size */
+    .footer-column p,
+    .footer-column ul,
+    .footer-column form {
+        font-size: 0.9em;
     }
 
-    .carousel-arrow {
-        width: 30px; /* Further reduce size of arrows */
-        height: 30px;
-        font-size: 1em;
-    }
-       .featured-projects {
-        padding: 30px;
+    .submit-button {
+        width: 100%;
+        text-align: center;
     }
 
-    .featured-projects-title {
-        font-size: 1.5em; /* Reduce title font size for very small screens */
-    }
 
-    .featured-projects-subtitle {
-        font-size: 1em; /* Smaller subtitle font size */
-    }
-
-    .carousel-arrow {
-        width: 30px; /* Further reduce size of arrows */
-        height: 30px;
-        font-size: 1em;
-    }
 
     }

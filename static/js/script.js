@@ -39,3 +39,23 @@ function moveSlide(direction) {
     const offset = -(currentIndex * projects[0].offsetWidth);
     carousel.style.transform = `translateX(${offset}px)`;
 }
+let blogCurrentIndex = 0;
+
+function moveBlogSlide(direction) {
+    const carousel = document.querySelector('.blogs-news .carousel');
+    const totalBlogs = document.querySelectorAll('.blogs-news .blog-post').length;
+    const blogsPerView = window.innerWidth > 768 ? 3 : 1; // Adjust based on screen size
+    const maxIndex = Math.ceil(totalBlogs / blogsPerView) - 1;
+
+    blogCurrentIndex += direction;
+
+    // Keep the carousel within bounds
+    if (blogCurrentIndex < 0) {
+        blogCurrentIndex = maxIndex;
+    } else if (blogCurrentIndex > maxIndex) {
+        blogCurrentIndex = 0;
+    }
+
+    const offset = -blogCurrentIndex * (100 / blogsPerView); // Adjust based on number of visible items
+    carousel.style.transform = `translateX(${offset}%)`;
+}
