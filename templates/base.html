@@ -11,10 +11,10 @@
 <body>
     <!-- Navigation Bar -->
     <nav class="navbar" id="navbar">
-       <button class="menu-icon" aria-label="Toggle navigation menu" onclick="toggleMenu()">
-    <span class="menu-icon-symbol">☰</span>
-    <span class="menu-text">Menu</span>
-</button>
+        <button class="menu-icon" aria-label="Toggle navigation menu" onclick="toggleMenu()">
+            <span class="menu-icon-symbol">☰</span>
+            <span class="menu-text">Menu</span>
+        </button>
 
         <div class="logo-container">
             <img src="{{ url_for('static', filename='images/logo_noName.png') }}" alt="Shree Mahalakshmi Constructions Logo" id="mainLogo">
@@ -30,11 +30,10 @@
         <button class="close-menu" aria-label="Close navigation menu" onclick="toggleMenu()">&times; CLOSE</button>
         <nav>
             <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About Us</a></li>
-                <li><a href="#">Projects</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="{{ url_for('index') }}">Home</a></li>
+                <li><a href="{{ url_for('about') }}">About Us</a></li>
+                <li><a href="{{ url_for('projects') }}">Projects</a></li>
+                <li><a href="{{ url_for('index') }}#blogs">News</a></li>
                 <li class="mobile-only"><a href="#">BOOK A SITE VISIT</a></li>
             </ul>
         </nav>
@@ -43,7 +42,6 @@
     <main class="content">
         {% block content %}{% endblock %}
     </main>
-
 
     <!-- Footer Section -->
     <footer class="footer-section">
@@ -70,9 +68,7 @@
             <div class="footer-column links-column">
                 <h3>Useful Links</h3>
                 <ul>
-                    <li>SHREE SUMITRA APARTMENTS</li>
-                    <li>Shree Mahalakshmi Residency</li>
-                    <li>Shree Mahalakshmi Kunj</li>
+<li><a href="{{ url_for('sumitra_apartments') }}">SHREE SUMITRA APARTMENTS</a></li>
                 </ul>
             </div>
 

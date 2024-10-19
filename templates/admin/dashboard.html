@@ -3,17 +3,206 @@
 {% block title %}Admin Dashboard{% endblock %}
 
 {% block content %}
-<h2>Admin Dashboard</h2>
-<a href="{{ url_for('create_post') }}" class="btn">Create New Post</a>
-<ul>
-    {% for post in posts %}
-    <li>
-        <h4>{{ post.title }}</h4>
-        <a href="{{ url_for('edit_post', post_id=post.id) }}">Edit</a>
-        <form action="{{ url_for('delete_post', post_id=post.id) }}" method="POST">
-            <button type="submit">Delete</button>
-        </form>
-    </li>
-    {% endfor %}
-</ul>
+<style>
+    :root {
+        --brown-color: #c59542; /* Adjust to your base root color */
+    }
+
+    .dashboard-container {
+        padding: 50px;
+    }
+
+    .dashboard-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 30px;
+    }
+
+    .dashboard-title {
+        text-align: center;
+        color: #333;
+        font-size: 2em;
+        flex-grow: 1;
+    }
+
+    .logout-btn {
+        padding: 10px 20px;
+        background-color: #d9534f; /* Bootstrap-like danger color */
+        color: #fff;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: background-color 0.3s ease-in-out;
+        border: none;
+        cursor: pointer;
+    }
+
+    .logout-btn:hover {
+        background-color: var(--brown-color);
+    }
+
+    .tab-container {
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+        margin-bottom: 30px;
+    }
+
+    .tab {
+        padding: 20px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        background-color: #f9f9f9;
+        cursor: pointer;
+        transition: background-color 0.3s, color 0.3s;
+    }
+
+    .tab:hover {
+        background-color: var(--brown-color);
+        color: #fff;
+    }
+
+    .tab.active {
+        background-color: var(--brown-color); /* Active tab background color */
+        color: #fff;
+    }
+
+    .tab-content {
+        display: none;
+    }
+
+    .tab-content.active {
+        display: block;
+    }
+
+    /* Blog Post Styles */
+    .posts-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 20px;
+    }
+
+    .post-card {
+        padding: 20px;
+        background-color: #fff;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: box-shadow 0.3s ease-in-out;
+    }
+
+    .post-card:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .post-title {
+        color: #002b49;
+        margin-bottom: 15px;
+    }
+
+    .post-actions {
+        display: flex;
+        gap: 10px;
+    }
+
+    .edit-btn,
+    .delete-btn {
+        padding: 10px;
+        text-align: center;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+    }
+
+    .edit-btn {
+        background-color: #5cb85c; /* Bootstrap-like success color */
+        color: #fff;
+    }
+
+    .edit-btn:hover {
+        background-color: var(--brown-color);
+        color: #fff;
+    }
+
+    .delete-btn {
+        background-color: #d9534f;
+        color: #fff;
+    }
+
+    .delete-btn:hover {
+        background-color: var(--brown-color);
+        color: #fff;
+    }
+
+    /* Forms Section Placeholder */
+    .form-content {
+        padding: 20px;
+        background-color: #fff;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+    }
+</style>
+
+<div class="dashboard-container">
+    <div class="dashboard-header">
+        <h2 class="dashboard-title">Admin Dashboard</h2>
+        <a href="{{ url_for('logout') }}" class="logout-btn">Logout</a>
+    </div>
+
+    <!-- Tabs for Blog and Forms -->
+    <div class="tab-container">
+        <div class="tab" id="blogs-tab" onclick="showTab('blogs')">Blogs</div>
+        <div class="tab" id="forms-tab" onclick="showTab('forms')">Forms</div>
+    </div>
+
+    <!-- Blog Content -->
+    <div class="tab-content" id="blogs-content">
+        <div class="posts-list">
+            {% for post in posts %}
+            <div class="post-card">
+                <h4 class="post-title">{{ post.title }}</h4>
+                <div class="post-actions">
+                    <a href="{{ url_for('edit_post', post_id=post.id) }}" class="edit-btn">Edit</a>
+                    <form action="{{ url_for('delete_post', post_id=post.id) }}" method="POST">
+                        <button type="submit" class="delete-btn">Delete</button>
+                    </form>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <!-- Forms Content Placeholder -->
+    <div class="tab-content" id="forms-content">
+        <div class="form-content">
+            <p>This is where the forms information will be shown.</p>
+            <p>Currently a placeholder for future use.</p>
+        </div>
+    </div>
+</div>
+
+<script>
+    // JavaScript to toggle between tabs
+    function showTab(tabName) {
+        // Hide all tab contents
+        document.querySelectorAll('.tab-content').forEach((content) => {
+            content.classList.remove('active');
+        });
+
+        // Deactivate all tabs
+        document.querySelectorAll('.tab').forEach((tab) => {
+            tab.classList.remove('active');
+        });
+
+        // Show selected tab content and activate the tab
+        document.getElementById(`${tabName}-content`).classList.add('active');
+        document.getElementById(`${tabName}-tab`).classList.add('active');
+    }
+
+    // Show the "Blogs" tab by default on page load
+    document.addEventListener('DOMContentLoaded', function() {
+        showTab('blogs');
+    });
+</script>
 {% endblock %}
