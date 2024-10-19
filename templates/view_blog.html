@@ -3,8 +3,20 @@
 {% block title %}{{ post.title }}{% endblock %}
 
 {% block content %}
-<h2>{{ post.title }}</h2>
-<img src="{{ url_for('static', filename='uploads/' + post.image) }}" alt="{{ post.title }}" style="width: 100%; max-width: 600px; height: auto; margin-bottom: 20px;">
-<p>{{ post.content }}</p>
-<p><small>Posted on {{ post.date_posted.strftime('%B %d, %Y') }}</small></p>
+<section class="blog-detail-container">
+    <div class="blog-header">
+        <h1 class="blog-title">{{ post.title }}</h1>
+        <p class="blog-date">Posted on {{ post.date_posted.strftime('%B %d, %Y') }}</p>
+    </div>
+
+    {% if post.image %}
+    <div class="blog-image-container">
+        <img src="{{ url_for('static', filename='uploads/' + post.image) }}" alt="{{ post.title }}" class="blog-image">
+    </div>
+    {% endif %}
+
+    <div class="blog-content">
+        <p>{{ post.content | safe }}</p>
+    </div>
+</section>
 {% endblock %}

@@ -3,17 +3,78 @@
 {% block title %}Edit Post{% endblock %}
 
 {% block content %}
-<h2>Edit Blog Post</h2>
-<form action="{{ url_for('edit_post', post_id=post.id) }}" method="POST" enctype="multipart/form-data">
-    <label for="title">Title</label>
-    <input type="text" id="title" name="title" value="{{ post.title }}" required>
+<style>
+    .edit-post-container {
+        max-width: 800px;
+        margin: 50px auto; /* Added margin to the top to move the box down */
+        padding: 30px;
+        background-color: #f9f9f9;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
 
-    <label for="content">Content</label>
-    <textarea id="content" name="content" required>{{ post.content }}</textarea>
+    .edit-post-container h2 {
+        text-align: center;
+        color: #333;
+        margin-bottom: 30px;
+        font-size: 2em;
+    }
 
-    <label for="image">Update Image</label>
-    <input type="file" id="image" name="image" accept="image/*">
+    .edit-post-container label {
+        display: block;
+        margin-bottom: 10px;
+        font-weight: bold;
+        color: #555;
+    }
 
-    <button type="submit">Update Post</button>
-</form>
+    .edit-post-container input[type="text"],
+    .edit-post-container textarea,
+    .edit-post-container input[type="file"] {
+        width: 100%;
+        padding: 12px;
+        margin-bottom: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 1em;
+        box-sizing: border-box;
+    }
+
+    .edit-post-container textarea {
+        height: 150px;
+        resize: vertical;
+    }
+
+    .edit-post-container button[type="submit"] {
+        display: block;
+        width: 100%;
+        padding: 15px;
+        font-size: 1.1em;
+        color: #fff;
+        background-color: #d7993d; /* Gold-like color */
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+    .edit-post-container button[type="submit"]:hover {
+        background-color: #a47630; /* Darker gold shade on hover */
+    }
+</style>
+
+<div class="edit-post-container">
+    <h2>Edit Blog Post</h2>
+    <form action="{{ url_for('edit_post', post_id=post.id) }}" method="POST" enctype="multipart/form-data">
+        <label for="title">Title</label>
+        <input type="text" id="title" name="title" value="{{ post.title }}" required>
+
+        <label for="content">Content</label>
+        <textarea id="content" name="content" required>{{ post.content }}</textarea>
+
+        <label for="image">Update Image</label>
+        <input type="file" id="image" name="image" accept="image/*">
+
+        <button type="submit">Update Post</button>
+    </form>
+</div>
 {% endblock %}

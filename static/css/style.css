@@ -782,6 +782,62 @@ form {
     font-size: 0.9em;
     color: #cabdbd;
 }
+.blog-detail-container {
+    max-width: 1500px; /* Increased the max-width to make the box larger */
+    margin: 50px auto;
+    padding: 0 40px; /* Increased padding for larger container */
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.blog-detail-container:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.blog-header {
+    text-align: center;
+    padding: 30px 20px;
+    border-bottom: 1px solid #ddd;
+}
+
+.blog-title {
+    font-size: 2.8em; /* Adjusted to make the title larger */
+    color: #002b49;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.blog-date {
+    font-size: 1em;
+    color: #777;
+}
+
+.blog-image-container {
+    text-align: center;
+    margin: 40px auto; /* Increased margin for better visual separation */
+    max-width: 800px; /* Constrain the image width to keep it centered */
+}
+
+.blog-image {
+    width: 100%;
+    height: auto;
+    max-height: 500px; /* Limit the height of the image */
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.blog-content {
+    padding: 30px 50px; /* Increased padding to balance the larger container size */
+    font-size: 1.3em; /* Slightly larger text for readability in bigger container */
+    line-height: 1.8;
+    color: #444;
+    text-align: justify;
+}
+
+
 
 
 
@@ -809,6 +865,23 @@ form {
     .blogs-news-title::before,
     .blogs-news-title::after {
         width: 250px; /* Reduce the length of the lines for smaller screens */
+    }
+     .blog-detail-container {
+        padding: 0 20px;
+        max-width: 90%;
+    }
+
+    .blog-title {
+        font-size: 2.4em;
+    }
+
+    .blog-content {
+        padding: 20px 30px;
+        font-size: 1.2em;
+    }
+
+    .blog-image-container {
+        max-width: 100%;
     }
 
 }
@@ -962,6 +1035,22 @@ form {
     .footer-column form {
         text-align: left;
     }
+    .blog-title {
+        font-size: 2.2em;
+    }
+
+    .blog-content {
+        padding: 20px;
+        font-size: 1.1em;
+    }
+
+    .blog-header {
+        padding: 20px;
+    }
+
+    .blog-image {
+        max-height: 400px;
+    }
     }
 
 
@@ -1095,7 +1184,21 @@ form {
         width: 100%;
         text-align: center;
     }
+    .blog-title {
+        font-size: 2em;
+    }
 
+    .blog-content {
+        font-size: 1em;
+    }
+
+    .blog-header {
+        padding: 15px;
+    }
+
+    .blog-image {
+        max-height: 300px;
+    }
 
 
     }
