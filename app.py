@@ -51,19 +51,6 @@ def view_blog(blog_id):
     return render_template('view_blog.html', post=post)
 
 # Route for admin login
-@app.route('/admin', methods=['GET', 'POST'])
-def login():
-    if request.method == 'POST':
-        username = request.form['username']
-        password = request.form['password']
-        user = AdminUser.query.filter_by(username=username).first()
-        if user and check_password_hash(user.password, password):
-            login_user(user)
-            flash('Login successful!', 'success')
-            return redirect(url_for('admin_dashboard'))
-        else:
-            flash('Invalid username or password', 'danger')
-    return render_template('admin/login.html')
 @app.route('/admin/login', methods=['GET', 'POST'])
 def login():
     if request.method == 'POST':
@@ -86,12 +73,18 @@ def logout():
     flash('You have been logged out.', 'info')
     return redirect(url_for('login'))
 
+
+
+
 # Route for admin dashboard to create, edit, and delete posts
-@app.route('/admin/dashboard')
+@app.route('/admin')
 @login_required
 def admin_dashboard():
     posts = BlogPost.query.all()
     return render_template('admin/dashboard.html', posts=posts)
+
+
+
 
 @app.route('/admin/create', methods=['GET', 'POST'])
 @login_required
