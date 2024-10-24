@@ -1,8 +1,127 @@
- {% extends 'base.html' %}
- {% block title %}Projects{% endblock %}
- {% block content %}
- <h2>Our Projects</h2>
- <div class="project-list">
-     <!-- Project details and images go here -->
- </div>
- {% endblock %}
+{% extends 'base.html' %}
+
+{% block title %}Ongoing Projects{% endblock %}
+
+{% block content %}
+<section class="header-section">
+    <img src="{{ url_for('static', filename='images/Project-hero.webp') }}" alt="Ongoing Projects Header" class="header-image">
+</section>
+
+<section class="projects-section">
+    <h2 class="projects-title">ALL PROJECTS</h2>
+    <div class="project-cards-container">
+
+<!--        Shree Sumitra Apartments-->
+        <div class="project-card">
+            <div class="project-image-container">
+                <img src="{{ url_for('static', filename='images/Sumitra.png') }}" alt="Shree Sumitra Apartments" class="project-image">
+            </div>
+            <div class="project-details">
+                <h3 class="project-title">Shree Sumitra Apartments</h3>
+                <div class="project-location">
+                    <span class="project-location-icon">📍</span> Malad West
+                </div>
+
+                <hr class="project-separator">
+                <p>Current Status: Completed Projects</p>
+                <br>
+                <div class="project-buttons">
+                    <a href="#" class="view-details-btn">View Project Details</a>
+                    <a href="#" class="enquire-btn">Enquire</a>
+                </div>
+            </div>
+        </div>
+
+<!--        Shree Mahalakshmi Residency-->
+        <div class="project-card">
+            <div class="project-image-container">
+                <img src="{{ url_for('static', filename='projects/maha_res/3.png') }}" alt="Shree Mahalakshmi Residency" class="project-image">
+            </div>
+            <div class="project-details">
+                <h3 class="project-title">Shree Mahalakshmi Residency</h3>
+                <div class="project-location">
+                    <span class="project-location-icon">📍</span> Vile Parle
+                </div>
+                <hr class="project-separator">
+                <p>Current Status: OnGoing Projects</p>
+                <br>
+                <div class="project-buttons">
+                    <a href="#" class="view-details-btn">View Project Details</a>
+                    <a href="#" class="enquire-btn">Enquire</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+
+<!--    Shree Mahalakshmi Kunj-->
+    <div class="project-cards-container">
+        <div class="project-card">
+            <div class="project-image-container">
+                <img src="{{ url_for('static', filename='projects/maha_kunj/1.png') }}" alt="Shree Mahalakshmi Kunj" class="project-image">
+            </div>
+            <div class="project-details">
+                <h3 class="project-title">Shree Mahalakshmi Kunj</h3>
+                <div class="project-location">
+                    <span class="project-location-icon">📍</span> Vile Parle East
+                </div>
+
+                <hr class="project-separator">
+                <p>Current Status: OnGoing Projects</p>
+                <br>
+                <div class="project-buttons">
+                    <a href="#" class="view-details-btn">View Project Details</a>
+                    <a href="#" class="enquire-btn">Enquire</a>
+                </div>
+            </div>
+        </div>
+
+<!--        Shree Mahalkshmi Trinity-->
+        <div class="project-card">
+            <div class="project-image-container">
+                <img src="{{ url_for('static', filename='images/project1.png') }}" alt="Shree Mahalkshmi Trinity" class="project-image">
+            </div>
+            <div class="project-details">
+                <h3 class="project-title">Shree Mahalkshmi Trinity</h3>
+                <div class="project-location">
+                    <span class="project-location-icon">📍</span> Mahim West
+                </div>
+                <hr class="project-separator">
+                <p>Current Status: Upcomming Projects</p>
+                <br>
+                <div class="project-buttons">
+                    <a href="#" class="view-details-btn">View Project Details</a>
+                    <a href="#" class="enquire-btn">Enquire</a>
+                </div>
+            </div>
+        </div>
+
+<!--        Shree Mahalakshmi Saburi-->
+         <div class="project-card">
+            <div class="project-image-container">
+                <img src="{{ url_for('static', filename='projects/saburi/2.png') }}" alt="Shree Mahalakshmi Saburi" class="project-image">
+            </div>
+            <div class="project-details">
+                <h3 class="project-title">Shree Mahalakshmi Saburi</h3>
+                <div class="project-location">
+                    <span class="project-location-icon">📍</span> Santacruz East
+                </div>
+                <hr class="project-separator">
+                <p>Current Status: Upcomming Projects</p>
+                <br>
+                <div class="project-buttons">
+                    <a href="#" class="view-details-btn">View Project Details</a>
+                    <a href="#" class="enquire-btn">Enquire</a>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</section>
+<section class="projects-footer-image">
+    <img src="{{ url_for('static', filename='images/Project-foot.webp') }}" alt="Footer Image" class="projects-footer-image-content">
+</section>
+
+{% endblock %}
