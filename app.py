@@ -140,20 +140,20 @@ def projects():
 
 @app.route('/saburi_apartments')
 def sumitra_apartments():
-    return render_template('saburi.html')
+    return render_template('projects/saburi.html')
 
 # Routes for project pages
 @app.route('/project/saburi')
 def saburi_project():
-    return render_template('saburi.html')
+    return render_template('projects/saburi.html')
 
 @app.route('/project/maha_kunj')
 def maha_kunj_project():
-    return render_template('maha_kunj.html')
+    return render_template('projects/maha_kunj.html')
 
 @app.route('/project/maha_res')
 def maha_res_project():
-    return render_template('maha_res.html')
+    return render_template('projects/maha_res.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
