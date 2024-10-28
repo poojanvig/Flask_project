@@ -1,6 +1,318 @@
- {% extends 'base.html' %}
-     {% block title %}About Us{% endblock %}
-     {% block content %}
-     <h2>About Our Company</h2>
-     <p>We are a leading real estate company...</p>
-     {% endblock %}
+{% extends 'base.html' %}
+
+{% block content %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shree Mahalakshmi Construction - About Us</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .about-us-section {
+            text-align: center;
+            padding: 40px 10%;
+            background-color: #ffffff;
+        }
+
+        .hero-image-container {
+            position: relative;
+            width: 100%;
+            height: 60vh;
+            overflow: hidden;
+        }
+
+        .hero-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.7);
+        }
+
+        .hero-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: #fff;
+        }
+
+        .hero-content h1 {
+            font-size: 2.5em;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .hero-content .sub-heading {
+            font-size: 1.2em;
+            color: #c59542;
+            font-weight: 600;
+        }
+
+        .about-us-text h1 {
+            font-size: 2em;
+            color: #002b49;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .about-us-text .sub-heading {
+            font-size: 1.1em;
+            color: #c59542;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .about-us-text p {
+            font-size: 1em;
+            color: #555;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .vision-mission-section {
+            text-align: center;
+            /*padding: 40px 10%;*/
+            background-color: #ffffff;
+        }
+
+        .vision-mission-image {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .vision-mission-text {
+            padding: 40px 5%;
+            text-align: center;
+        }
+
+        .vision-mission-text h1 {
+            font-size: 2em;
+            color: #002b49;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .vision-mission-text .sub-heading {
+            font-size: 1.1em;
+            color: #c59542;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .vision-mission-text p {
+            font-size: 1em;
+            color: #555;
+            max-width: 800px;
+            margin: 0 auto;
+            margin-bottom: 20px;
+        }
+
+        /*#######*/
+
+        .leadership-section {
+            text-align: center;
+            /*padding: 40px 10%;*/
+            background-color: #ffffff;
+        }
+
+        .leadership-image {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .leadership-text {
+            padding: 40px 5%;
+            text-align: center;
+        }
+
+        .leadership-text h1 {
+            font-size: 2em;
+            color: #c59542;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .leadership-text p {
+            font-size: 1em;
+            color: #555;
+            max-width: 800px;
+            margin: 0 auto;
+            margin-bottom: 20px;
+        }
+
+        /*####*/
+
+        .management-section {
+            text-align: center;
+            /*padding: 40px 10%;*/
+            background-color: #ffffff;
+        }
+
+        .management-heading {
+            font-size: 2em;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 40px;
+        }
+
+        .management-container {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .management-profile {
+            display: flex;
+            align-items: flex-start;
+            width: 100%;
+            max-width: 800px;
+            gap: 20px;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 30px;
+            margin-bottom: 20px;
+        }
+
+        .management-profile img {
+            width: 250px;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .management-details {
+            text-align: left;
+        }
+
+        .management-details h3 {
+            font-size: 1.5em;
+            color: #c59542;
+            font-weight: 600;
+            margin: 0 0 10px 0;
+        }
+
+        .management-details h4 {
+            font-size: 1em;
+            font-weight: 400;
+            color: #777;
+            margin: 0 0 20px 0;
+        }
+
+        .management-details p {
+            font-size: 1em;
+            color: #555;
+            margin: 0;
+        }
+
+        .management-footer-image {
+            width: 100%;
+            height: auto;
+            margin-top: 40px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <!-- Hero Section -->
+    <div class="hero-image-container">
+        <img src="/static/images/aboutus.png" alt="Shree Mahalakshmi Construction" class="hero-image">
+    </div>
+
+    <!-- About Us Text Section -->
+    <section class="about-us-section">
+        <div class="about-us-text">
+            <h1>Shree Mahalakshmi Construction</h1>
+            <div class="sub-heading">A Legacy Of Years Driven By A Desire</div>
+            <p>Development is the cornerstone of Shree Mahalakshmi Constructions' success. Over the years, the company
+                has fine-tuned its approach to key development components such as site selection, location, plot size,
+                design, and value generation. Founded in 2013 as a Private Partnership Company, we have meticulously
+                shaped our identity, mission, and purpose. At Shree Mahalakshmi Constructions, we prioritize adopting
+                the highest business traits, ensuring that every engagement nurtures long-term relationships with
+                landowners, customers, investors, and other business partners.</p>
+        </div>
+    </section>
+
+    <section class="vision-mission-section">
+        <!-- Image Section -->
+        <img src="/static/images/aboutussection.png" alt="Shree Mahalakshmi Construction Vision" class="vision-mission-image">
+
+        <!-- Text Section -->
+        <div class="vision-mission-text">
+            <h1>Vision & Mission</h1>
+            <div class="sub-heading">Our mission and vision at Shree Mahalakshmi Construction stand firm -</div>
+            <p>Our mission is to create meaningful and extraordinary homes through a professional, informative, transparent, and dedicated team. We aim to exceed our clients' expectations and serve them better than the rest.</p>
+            <p>Our vision is to establish ourselves as the most trusted and transparent leader in the real estate industry. We aim to build lasting relationships with our clients by consistently delivering unparalleled service, fostering a culture of honesty, and ensuring complete transparency in all our transactions.</p>
+        </div>
+    </section>
+
+    <!-- Leadership Section -->
+    <section class="leadership-section">
+        <!-- Image Section -->
+        <img src="/static/images/leadership.png" alt="Shree Mahalakshmi Construction Leadership" class="leadership-image">
+
+        <!-- Text Section -->
+        <div class="leadership-text">
+            <h1>Leadership</h1>
+            <p>We believe that the journey towards excellence begins with people who drive our strategies through collectively evolved processes, ensuring customer delight. We recruit the best and meaningfully engage with them resulting in a passionate, customer-centric, and loyal team. We consciously provide planned learning and developmental opportunities to the vast pool of talent that constitute our workforce. We build, sustain, and persistently reinforce a company culture that reflects a high-performance atmosphere rooted in trust and reliability, professional ethics, and innovation.</p>
+        </div>
+    </section>
+
+    <!-- Key Management Personnel Section -->
+    <section class="management-section">
+        <h2 class="management-heading">Key Management Personnel</h2>
+
+        <!-- Management Profiles -->
+        <div class="management-container">
+            <!-- Profile 1 -->
+            <div class="management-profile">
+                <img src="/static/images/profile.png" alt="Hiren Sunil Wadhare">
+                <div class="management-details">
+                    <h3>Hiren Sunil Wadhare</h3>
+                    <h4>COO - Project Strategy and Execution</h4>
+                    <p>Hiren Sunil Wadhare, our founder, comes from a family with a rich history in property development. As a third-generation developer, Hiren has been immersed in construction from a young age, gaining hands-on experience alongside his grandfather, father, and uncle. With a Master's and Bachelor's degree in Management Studies and two years of experience working as a Relationship Officer at Abu Dhabi Commercial Bank in Dubai, Hiren has honed his sales techniques and ability to handle complex situations involving investors, landowners, and customers.</p>
+                    <p>Hiren's vision is to develop plots under 500 sq. meters that are often overlooked by larger developers. Despite the challenges and lower profits associated with small plots, his acumen and decision-making have led to significant successes, such as completing his first project on a 225 sq. meter plot in Liberty Garden, Malad West, Mumbai.</p>
+                </div>
+            </div>
+
+            <!-- Profile 2 (if needed) -->
+            <div class="management-profile">
+                <img src="/static/images/profile.png" alt="Hiren Sunil Wadhare">
+                <div class="management-details">
+                    <h3>Hiren Sunil Wadhare</h3>
+                    <h4>COO - Project Strategy and Execution</h4>
+                    <p>Hiren Sunil Wadhare, our founder, comes from a family with a rich history in property development. As a third-generation developer, Hiren has been immersed in construction from a young age, gaining hands-on experience alongside his grandfather, father, and uncle. With a Master's and Bachelor's degree in Management Studies and two years of experience working as a Relationship Officer at Abu Dhabi Commercial Bank in Dubai, Hiren has honed his sales techniques and ability to handle complex situations involving investors, landowners, and customers.</p>
+                    <p>Hiren's vision is to develop plots under 500 sq. meters that are often overlooked by larger developers. Despite the challenges and lower profits associated with small plots, his acumen and decision-making have led to significant successes, such as completing his first project on a 225 sq. meter plot in Liberty Garden, Malad West, Mumbai.</p>
+                </div>
+            </div>
+
+            <!-- Profile 3 (if needed) -->
+            <div class="management-profile">
+                <img src="/static/images/profile.png" alt="Hiren Sunil Wadhare">
+                <div class="management-details">
+                    <h3>Hiren Sunil Wadhare</h3>
+                    <h4>COO - Project Strategy and Execution</h4>
+                    <p>Hiren Sunil Wadhare, our founder, comes from a family with a rich history in property development. As a third-generation developer, Hiren has been immersed in construction from a young age, gaining hands-on experience alongside his grandfather, father, and uncle. With a Master's and Bachelor's degree in Management Studies and two years of experience working as a Relationship Officer at Abu Dhabi Commercial Bank in Dubai, Hiren has honed his sales techniques and ability to handle complex situations involving investors, landowners, and customers.</p>
+                    <p>Hiren's vision is to develop plots under 500 sq. meters that are often overlooked by larger developers. Despite the challenges and lower profits associated with small plots, his acumen and decision-making have led to significant successes, such as completing his first project on a 225 sq. meter plot in Liberty Garden, Malad West, Mumbai.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer Image Section -->
+        <img src="/static/images/aboutfoot.png" alt="Footer Image" class="management-footer-image">
+    </section>
+
+</body>
+
+</html>
+{% endblock %}
