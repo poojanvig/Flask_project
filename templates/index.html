@@ -41,18 +41,19 @@
         <img src="{{ url_for('static', filename='images/space.webp') }}" alt="City Buildings Looking Up" class="image-full">
     </section>
 
-  <!-- Stay Updated Section -->
-    <section class="stay-updated">
-        <h2 class="stay-updated-title">STAY UPDATED</h2>
-        <p>Keep up with the latest in real estate in Mumbai and developments at Shree Mahalakshmi Constructions</p>
-        <form name="stay-updated" method="POST" data-netlify="true">
-            <input type="hidden" name="form-name" value="stay-updated">
-            <div class="subscription-form">
-                <input type="email" name="email" placeholder="EMAIL ADDRESS" class="email-input" required>
-                <button type="submit" class="submit-button">SUBMIT</button>
-            </div>
-        </form>
-    </section>
+<!-- Stay Updated Section -->
+<section class="stay-updated">
+    <h2 class="stay-updated-title">STAY UPDATED</h2>
+    <p>Keep up with the latest in real estate in Mumbai and developments at Shree Mahalakshmi Constructions</p>
+    <form action="{{ url_for('stay_updated') }}" method="POST">
+        <input type="hidden" name="form-name" value="stay-updated">
+        <div class="subscription-form">
+            <input type="email" name="email" placeholder="EMAIL ADDRESS" class="email-input" required>
+            <button type="submit" class="submit-button">SUBMIT</button>
+        </div>
+    </form>
+</section>
+
 
 <hr class="line-breaker">
 
@@ -136,36 +137,30 @@
         <h2>CONTACT FOR SALE IN MUMBAI</h2>
     </div>
     <div class="contact-form">
-        <form name="contact" method="POST" data-netlify="true">
-            <input type="hidden" name="form-name" value="contact">
-
+        <form method="POST" action="{{ url_for('contact') }}">
             <div class="form-group">
                 <input type="text" name="name" placeholder="Your Name" required>
             </div>
-
             <div class="form-group">
                 <input type="email" name="email" placeholder="Your Email" required>
             </div>
-
             <div class="form-group">
                 <input type="tel" name="phone" placeholder="Phone Number" required>
             </div>
-
             <div class="form-group">
                 <textarea name="message" placeholder="Your Message" rows="6"></textarea>
             </div>
-
             <div class="form-group-checkbox">
                 <input type="checkbox" name="authorization" id="authorization" required>
                 <label for="authorization">
                     I authorize Shree Mahalakshmi Constructions and its representatives to contact me with updates and notifications via Email, SMS, WhatsApp, and Call. This will override the registry on DND/NDNC.
                 </label>
             </div>
-
             <button type="submit" class="submit-button">SUBMIT</button>
         </form>
     </div>
 </section>
+
 
 <style>
     /* Preloader Styles */

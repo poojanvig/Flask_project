@@ -155,12 +155,30 @@
         background-color: #a47630;
     }
 
-    /* Forms Section Placeholder */
+    /* Forms Section */
     .form-content {
         padding: 20px;
         background-color: #fff;
         border: 1px solid #ddd;
         border-radius: 8px;
+    }
+
+    .form-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+    }
+
+    .form-table th,
+    .form-table td {
+        border: 1px solid #ddd;
+        padding: 10px;
+        text-align: left;
+    }
+
+    .form-table th {
+        background-color: var(--brown-color);
+        color: #fff;
     }
 </style>
 
@@ -194,13 +212,57 @@
         </div>
     </div>
 
-    <!-- Forms Content Placeholder -->
-    <div class="tab-content" id="forms-content">
-        <div class="form-content">
-            <p>This is where the forms information will be shown.</p>
-            <p>Currently a placeholder for future use.</p>
-        </div>
+    <!-- Forms Content -->
+    <!-- Subscriptions Content Placeholder -->
+<div class="tab-content" id="forms-content">
+    <!-- Existing Contact Forms Table -->
+    <div class="form-content">
+        <h2>Contact Form Submissions</h2>
+        <table class="form-table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>Message</th>
+                    <th>Date Submitted</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for contact in contacts %}
+                <tr>
+                    <td>{{ contact.name }}</td>
+                    <td>{{ contact.email }}</td>
+                    <td>{{ contact.phone }}</td>
+                    <td>{{ contact.message }}</td>
+                    <td>{{ contact.date_submitted.strftime('%Y-%m-%d %H:%M:%S') }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
     </div>
+
+    <!-- Subscription Forms Table -->
+    <div class="form-content">
+        <h2>Subscription Form Submissions</h2>
+        <table class="form-table">
+            <thead>
+                <tr>
+                    <th>Email</th>
+                    <th>Date Submitted</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for subscription in subscriptions %}
+                <tr>
+                    <td>{{ subscription.email }}</td>
+                    <td>{{ subscription.date_submitted.strftime('%Y-%m-%d %H:%M:%S') }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
 </div>
 
 <script>

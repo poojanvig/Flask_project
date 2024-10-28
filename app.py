@@ -7,6 +7,7 @@ from datetime import datetime
 import os
 from werkzeug.utils import secure_filename
 
+
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///site.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
@@ -30,6 +31,20 @@ class AdminUser(UserMixin, db.Model):
     username = db.Column(db.String(100), unique=True, nullable=False)
     password = db.Column(db.String(200), nullable=False)
 
+class Contact(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(100), nullable=False)
+    email = db.Column(db.String(120), nullable=False)
+    phone = db.Column(db.String(20), nullable=False)
+    message = db.Column(db.Text, nullable=True)
+    date_submitted = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
+
+class Subscription(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    email = db.Column(db.String(120), nullable=False)
+    date_submitted = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
+
+
 # Initialize the database
 with app.app_context():
     db.create_all()
@@ -43,6 +58,42 @@ def load_user(user_id):
 def index():
     blog_posts = BlogPost.query.order_by(BlogPost.date_posted.desc()).limit(5).all()
     return render_template('index.html', blog_posts=blog_posts)
+
+
+@app.route('/contact', methods=['POST'])
+def contact():
+    if request.method == 'POST':
+        name = request.form.get('name')
+        email = request.form.get('email')
+        phone = request.form.get('phone')
+        message = request.form.get('message')
+
+        # Create a new contact instance
+        new_contact = Contact(name=name, email=email, phone=phone, message=message)
+
+        # Add to the session and commit to save in the database
+        db.session.add(new_contact)
+        db.session.commit()
+
+        flash('Your message has been sent successfully!', 'success')
+        return redirect(url_for('index'))
+
+
+@app.route('/stay-updated', methods=['POST'])
+def stay_updated():
+    if request.method == 'POST':
+        email = request.form.get('email')
+
+        # Create a new subscription instance
+        new_subscription = Subscription(email=email)
+
+        # Add to the session and commit to save in the database
+        db.session.add(new_subscription)
+        db.session.commit()
+
+        flash('Thank you for subscribing!', 'success')
+        return redirect(url_for('index'))
+
 
 # Route for viewing an individual blog post
 @app.route('/blog/<int:blog_id>')
@@ -76,14 +127,13 @@ def logout():
 
 
 
-# Route for admin dashboard to create, edit, and delete posts
 @app.route('/admin')
 @login_required
 def admin_dashboard():
     posts = BlogPost.query.all()
-    return render_template('admin/dashboard.html', posts=posts)
-
-
+    contacts = Contact.query.order_by(Contact.date_submitted.desc()).all()  # Get all contact submissions
+    subscriptions = Subscription.query.order_by(Subscription.date_submitted.desc()).all()  # Get all subscriptions
+    return render_template('admin/dashboard.html', posts=posts, contacts=contacts, subscriptions=subscriptions)
 
 
 @app.route('/admin/create', methods=['GET', 'POST'])
