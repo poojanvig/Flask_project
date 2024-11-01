@@ -249,13 +249,14 @@
     <p class="mobile-featured-projects-subtitle">We have built 42+ projects across residential and commercial segments</p>
     <div class="mobile-carousel-container">
         <div class="mobile-carousel">
-            <a href="{{ url_for('saburi_project') }}" class="mobile-project-link">
+            <a href="{{ url_for('Sumitra_project') }}" class="mobile-project-link">
                 <div class="mobile-project">
-                    <img src="{{ url_for('static', filename='projects/saburi/2.png') }}" alt="Project 1">
-                    <h3>Shree Mahalakshmi Saburi</h3>
-                    <p>Santacruz</p>
+                    <img src="{{ url_for('static', filename='projects/sumitra/Sumitra_profile.png') }}" alt="Project 1">
+                     <h3>Shree Sumitra Apartments</h3>
+                    <p>Malad West</p>
                 </div>
             </a>
+
             <a href="{{ url_for('maha_kunj_project') }}" class="mobile-project-link">
                 <div class="mobile-project">
                     <img src="{{ url_for('static', filename='projects/maha_kunj/1.png') }}" alt="Project 2">
@@ -270,6 +271,7 @@
                     <p>Mahim West</p>
                 </div>
             </a>
+
         </div>
     </div>
     <div class="mobile-arrow-buttons">
@@ -808,12 +810,17 @@
 }
 
 .mobile-project h3 {
-    font-size: 1.2em; /* Adjust as necessary */
-    white-space: normal; /* Allow text to wrap */
-    overflow: hidden; /* Prevent text overflow */
-    text-align: center; /* Center-align the text */
-    margin: 10px 0; /* Add some space around */
+    font-family: 'Wittgenstein', serif;
+    text-align: center;
+    max-width: 95%; /* Limit the width to fit within the screen */
+    font-size: 1.2em;
+    overflow: hidden;
+    word-wrap: break-word;
+    margin: 10px 0;
 }
+
+
+
 
 
 .mobile-project p {
