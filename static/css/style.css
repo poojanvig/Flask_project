@@ -761,6 +761,18 @@ form {
     background: transparent;
     color: #fff;
 }
+.footer-column a {
+    color: #fff; /* Initial link color */
+    text-decoration: none; /* Remove underline */
+}
+
+.footer-column a:visited {
+    color: #fff; /* Ensure visited links stay the same color */
+}
+
+.footer-column a:hover {
+    color: #c59542; /* Gold-like color on hover */
+}
 
 .footer-column form input::placeholder {
     color: #ccc;
