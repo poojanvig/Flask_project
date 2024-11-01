@@ -1,3 +1,11 @@
+ @font-face {
+        font-family: 'Wittgenstein';
+        src: url('/static/fonts/Wittgenstein.ttf') format('truetype'); /* Adjust the path as needed */
+    }
+ @font-face {
+        font-family: 'Montserrat';
+        src: url('/static/fonts/Montserrat.ttf') format('truetype'); /* Adjust the path as needed */
+    }
 :root {
     --brown-color: #705e39;
 }
@@ -48,12 +56,6 @@ body {
     transition: all 0.3s ease;
 }
 
-/* Responsive Styles */
-@media (max-width: 768px) {
-    .content {
-        margin-top: 80px; /* Adjust this value for small screens */
-    }
-}
 
 .logo-container img {
     height: 80px;
@@ -199,7 +201,6 @@ body {
     }
 }
 
-
     /* Hero Section Styles */
     .hero-section {
         position: relative;
@@ -217,6 +218,7 @@ body {
     }
     /* About Section Styles */
     .about-section {
+        font-family: 'Montserrat', serif;
         text-align: center;
         padding: 50px;
         background-color: #f9f9f9;
@@ -237,6 +239,7 @@ body {
         margin: 10px 0;
     }
     .achievements {
+        font-family: 'Wittgenstein', serif;
         display: flex;
         justify-content: center;
         gap: 100px;
@@ -248,7 +251,7 @@ body {
     .achievement h2 {
         color: #c59542;
         font-size: 3em;
-        font-weight: 700;
+        font-weight: 500;
         margin-bottom: 5px;
     }
     .achievement p {
@@ -272,6 +275,7 @@ body {
     }
   /* Stay Updated Section Styles */
     .stay-updated {
+        font-family: 'Wittgenstein', serif;
         text-align: center;
         padding: 50px;
         background-color: #fff;
@@ -281,7 +285,7 @@ body {
     .stay-updated-title {
         font-size: 2em;
         color: #c59542; /* Gold-like color */
-        font-weight: 700;
+        font-weight: 500;
         margin-bottom: 20px;
         position: relative;
         display: flex;
@@ -346,17 +350,18 @@ body {
 }
 
 /* Locate Us Section Styles */
-.locate-us {
+.locate {
+    font-family: 'Wittgenstein', serif;
     text-align: center;
     padding: 50px;
     background-color: #fff;
     margin-top: 50px;
 }
 
-.locate-us-title {
+.locate-title {
     font-size: 2em;
     color: #c59542; /* Gold-like color */
-    font-weight: 700;
+    font-weight: 500;
     margin-bottom: 20px;
     position: relative;
     display: flex;
@@ -365,21 +370,21 @@ body {
     gap: 20px; /* Adjust the space between the text and the lines */
 }
 
-.locate-us-title::before,
-.locate-us-title::after {
+.locate-title::before,
+.locate-title::after {
     content: "";
     width: 505px;
     height: 1px;
     background: #000;
 }
 
-.locate-us-subtitle {
+.locate-subtitle {
     font-size: 1.2em;
     color: #333;
     margin-bottom: 30px;
 }
 
-.locate-us-image {
+.locate-image {
     margin: 0 auto;
     max-width: 1000px; /* Adjust width to fit the image properly */
     padding: 20px 0;
@@ -415,6 +420,7 @@ body {
 
 /* Featured Projects Section Styles */
 .featured-projects {
+    font-family: 'Wittgenstein', serif;
     text-align: center;
     padding: 50px;
     background-color: #fff;
@@ -424,7 +430,7 @@ body {
 .featured-projects-title {
     font-size: 2em;
     color: #c59542; /* Gold-like color */
-    font-weight: 700;
+    font-weight: 500;
     margin-bottom: 20px;
     position: relative;
     display: flex;
@@ -525,6 +531,7 @@ body {
     outline: none;
 }
 .blogs-news {
+    font-family: 'Wittgenstein', serif;
     text-align: center;
     padding: 50px;
     background-color: #fff;
@@ -534,7 +541,7 @@ body {
 .blogs-news-title {
     font-size: 2em;
     color: #c59542; /* Gold-like color */
-    font-weight: 700;
+    font-weight: 500;
     margin-bottom: 20px;
     position: relative;
     display: flex;
@@ -617,6 +624,7 @@ body {
     font-size: 1.5em;
 }
 .contact-section {
+    font-family: 'Wittgenstein', serif;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -637,7 +645,7 @@ body {
 .contact-info h2 {
     font-size: 2em;
     color: #c59542; /* Gold-like color */
-    font-weight: 700;
+    font-weight: 500;
     text-transform: uppercase;
     text-align: center;
 }
@@ -979,10 +987,6 @@ form {
     background-color: #a47630;
 }
 
-/* Responsive Styles */
-@media screen and (max-width: 768px) {
-
-}
 /* Projects Footer Image Section */
 .projects-footer-image {
     width: 100%;
@@ -996,407 +1000,3 @@ form {
     object-fit: cover; /* Makes sure the image fits within the container */
     display: block;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* Responsive Styles */
-@media (max-width: 1024px) {
-    .project {
-        flex: 0 0 50%; /* Display 2 projects at a time on medium screens */
-    }
-
-    .featured-projects-title::before,
-    .featured-projects-title::after {
-        width: 250px; /* Reduce the length of the lines for smaller screens */
-    }
-     .blog-post {
-        flex: 0 0 50%; /* Display 2 blog posts at a time on medium screens */
-    }
-
-    .blogs-news-title::before,
-    .blogs-news-title::after {
-        width: 250px; /* Reduce the length of the lines for smaller screens */
-    }
-     .blog-detail-container {
-        padding: 0 20px;
-        max-width: 90%;
-    }
-
-    .blog-title {
-        font-size: 2.4em;
-    }
-
-    .blog-content {
-        padding: 20px 30px;
-        font-size: 1.2em;
-    }
-
-    .blog-image-container {
-        max-width: 100%;
-    }
-
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    /* Responsive Styles */
-    @media (max-width: 768px) {
-        .hero-section {
-            height: calc(100vh - 80px); /* Adjust according to navbar height on smaller screens */
-            margin-top: 0px;
-        }
-
-        .container {
-            padding: 15px;
-        }
-
-        .achievements {
-            flex-direction: column;
-            gap: 30px;
-        }
-
-        .image-section {
-            height: 40vh;
-        }
-         .email-input {
-            width: 70%;
-        }
-     .locate-us-title::before,
-    .locate-us-title::after {
-        width: 50px; /* Shorter lines for smaller screens */
-    }
-
-    .locate-us-image {
-        max-width: 100%;
-        padding: 10px; /* Reduce padding to give more space for the image */
-    }
-
-    .map-image {
-        height: auto;
-        width: 100%;
-        max-height: 50vh; /* Increase the image height to occupy more space on the screen */
-    }
-
-    .know-more-button {
-        width: 100%; /* Full-width button on smaller devices */
-    }
-      .project {
-        flex: 0 0 100%; /* Display 1 project at a time on smaller screens */
-        padding: 0 10px; /* Reduce padding for smaller screens */
-    }
-
-    .featured-projects-title {
-        font-size: 1.8em; /* Reduce font size */
-    }
-
-    .featured-projects-title::before,
-    .featured-projects-title::after {
-        width: 150px; /* Further reduce the line length */
-    }
-
-    .carousel-arrow {
-        width: 40px; /* Reduce size of arrows */
-        height: 40px;
-        font-size: 1.2em; /* Smaller icon size */
-    }
-      .project-link {
-        flex: 0 0 100%; /* Display 1 project at a time on smaller screens */
-        padding: 0 10px; /* Reduce padding for smaller screens */
-    }
-
-    .featured-projects-title {
-        font-size: 1.8em; /* Reduce font size */
-    }
-
-    .featured-projects-title::before,
-    .featured-projects-title::after {
-        width: 150px; /* Further reduce the line length */
-    }
-
-    .carousel-arrow {
-        width: 40px; /* Reduce size of arrows */
-        height: 40px;
-        font-size: 1.2em; /* Smaller icon size */
-    }
-   .blog-post {
-        flex: 0 0 100%; /* Display 1 blog post at a time on smaller screens */
-        padding: 0 10px; /* Adjust padding for smaller screens */
-    }
-
-    .carousel-container {
-        max-width: 90%; /* Slightly reduce the container width for a better look on smaller screens */
-        margin: 0 auto;
-    }
-
-    .blogs-news-title {
-        font-size: 1.8em; /* Reduce font size for title */
-    }
-
-    .blogs-news-title::before,
-    .blogs-news-title::after {
-        width: 150px; /* Further reduce the line length */
-    }
-
-    .carousel-arrow {
-        width: 40px; /* Reduce size of arrows */
-        height: 40px;
-        font-size: 1.2em; /* Smaller icon size */
-    }
-     .contact-section {
-        flex-direction: column;
-        align-items: center;
-        padding: 20px;
-        gap: 20px;
-    }
-
-    .contact-info {
-        padding-top: 20px;
-        text-align: center;
-    }
-
-    .contact-info h2 {
-        font-size: 1.8em;
-    }
-
-    .contact-form {
-        width: 100%;
-    }
-   .footer-container {
-        flex-direction: column;
-        gap: 20px;
-    }
-
-    .footer-column {
-        min-width: 100%;
-        text-align: center;
-    }
-
-    .footer-column form {
-        text-align: left;
-    }
-    .blog-title {
-        font-size: 2.2em;
-    }
-
-    .blog-content {
-        padding: 20px;
-        font-size: 1.1em;
-    }
-
-    .blog-header {
-        padding: 20px;
-    }
-
-    .blog-image {
-        max-height: 400px;
-    }
-
-    .project-card {
-        flex-direction: column; /* Stack image and details vertically for smaller screens */
-    }
-
-    .project-image-container,
-    .project-details {
-        max-width: 100%;
-    }
-
-    .project-title {
-        font-size: 1.3em;
-    }
-
-    .project-details {
-        padding: 15px;
-    }
-
-    .view-details-btn,
-    .enquire-btn {
-        padding: 8px 15px;
-        font-size: 0.9em;
-    }
-
-}
-
-
-
-
-
-    @media (max-width: 480px) {
-        .hero-section {
-            height: calc(100vh - 60px); /* Adjust according to smaller navbar height */
-            margin-top: 0px;
-             /*height: 40vh;*/
-
-        }
-
-        .container {
-            padding: 10px;
-        }
-
-        h2 {
-            font-size: 1.5em;
-        }
-
-        p {
-            font-size: 1em;
-        }
-        .about-text {
-            padding: 0 5%;
-        }
-
-        .achievement h2 {
-            font-size: 2.5em;
-        }
-
-        .image-section {
-            height: 30vh;
-        }
-          .email-input {
-            width: 110%;
-        }
-
-        .subscription-form {
-            flex-direction: column;
-            gap: 20px;
-        }
-         .locate-us-image {
-                max-width: 100%;
-                padding: 5px; /* Further reduce padding for very small screens */
-            }
-
-            .map-image {
-                height: auto;
-                width: 100%;
-                max-height: 60vh; /* Increase the image height more on smaller screens */
-            }
-
-            .know-more-button {
-                width: 100%; /* Full-width button on smaller devices */
-            }
-                .featured-projects {
-                padding: 30px;
-            }
-            .project-link {
-                flex: 0 0 100%; /* Ensure only 1 project is visible at a time on very small screens */
-                padding: 0; /* Remove padding for small screens to give a full-width effect */
-            }
-            .featured-projects-title {
-                font-size: 1.5em; /* Reduce title font size for very small screens */
-            }
-
-            .featured-projects-subtitle {
-                font-size: 1em; /* Smaller subtitle font size */
-            }
-
-            .carousel-arrow {
-                width: 30px; /* Further reduce size of arrows */
-                height: 30px;
-                font-size: 1em;
-            }
-               .featured-projects {
-                padding: 30px;
-            }
-
-            .featured-projects-title {
-                font-size: 1.5em; /* Reduce title font size for very small screens */
-            }
-
-            .featured-projects-subtitle {
-                font-size: 1em; /* Smaller subtitle font size */
-            }
-
-            .carousel-arrow {
-                width: 30px; /* Further reduce size of arrows */
-                height: 30px;
-                font-size: 1em;
-            }
-           .blogs-news {
-                padding: 30px;
-            }
-
-            .blogs-news-title {
-                font-size: 1.5em; /* Reduce title font size for very small screens */
-            }
-
-            .blogs-news-subtitle {
-                font-size: 1em; /* Smaller subtitle font size */
-            }
-              .contact-info h2 {
-        font-size: 1.5em;
-    }
-
-    .submit-button {
-        width: 100%;
-        text-align: center;
-    }
-     .footer-section {
-        padding: 30px 10px;
-    }
-
-    .footer-column h3 {
-        font-size: 1.2em;
-    }
-
-    .footer-column p,
-    .footer-column ul,
-    .footer-column form {
-        font-size: 0.9em;
-    }
-
-    .submit-button {
-        width: 100%;
-        text-align: center;
-    }
-    .blog-title {
-        font-size: 2em;
-    }
-
-    .blog-content {
-        font-size: 1em;
-    }
-
-    .blog-header {
-        padding: 15px;
-    }
-
-    .blog-image {
-        max-height: 300px;
-    }
-      .project-title {
-        font-size: 1.2em;
-    }
-
-    .project-details {
-        padding: 10px;
-    }
-
-    .view-details-btn,
-    .enquire-btn {
-        padding: 6px 10px;
-        font-size: 0.8em;
-    }
-
-
-    }
