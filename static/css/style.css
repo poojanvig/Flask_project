@@ -623,6 +623,18 @@ body {
     color: #999; /* Initial grey color for arrow icon */
     font-size: 1.5em;
 }
+.blogs-news a {
+    color: #fff; /* Initial link color */
+    text-decoration: none; /* Remove underline */
+}
+
+.blogs-news a:visited {
+    color: #fff; /* Ensure visited links stay the same color */
+}
+
+.blogs-news a:hover {
+    color: #c59542; /* Gold-like color on hover */
+}
 .contact-section {
     font-family: 'Wittgenstein', serif;
     display: flex;
