@@ -205,5 +205,9 @@ def maha_kunj_project():
 def maha_res_project():
     return render_template('projects/maha_res.html')
 
+@app.route('/project/Sumitra')
+def Sumitra_project():
+    return render_template('projects/Sumitra.html')
+
 if __name__ == '__main__':
     app.run(debug=True)
