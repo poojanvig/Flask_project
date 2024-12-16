@@ -72,49 +72,82 @@
                 </a>
         </div>
     </section>
-    <!-- Featured Projects Section -->
-<section class="featured-projects">
-    <h2 class="featured-projects-title">FEATURED PROJECTS</h2>
-    <p class="featured-projects-subtitle">We have built 42+ projects across residential and commercial segments</p>
-    <div class="carousel-container">
-        <div class="carousel">
-             <a href="{{ url_for('Sumitra_project') }}" class="project-link">
-                <div class="project">
-                    <img src="{{ url_for('static', filename='projects/sumitra/Sumitra_profile.png') }}" alt="Project 1">
-                    <h3>Shree Sumitra Apartments</h3>
-                    <p>Malad West</p>
-                </div>
-            </a>
 
-            <a href="{{ url_for('maha_kunj_project') }}" class="project-link">
-                <div class="project">
-                    <img src="{{ url_for('static', filename='projects/maha_kunj/1.png') }}" alt="Project 2">
-                    <h3>Shree Mahalakshmi Kunj</h3>
-                    <p>Vile Parle</p>
+<!--    Project section-->
+
+    <section class="featured-projects">
+        <h2 class="locate-title">FEATURED PROJECTS</h2>
+        <p>We have built 42+ projects across residential and commercial segments</p>
+        <div class="projects-container">
+            <div class="projects-wrapper">
+                <div class="projects" id="projects">
+<!-- Sumitra-->
+                    <div class="project">
+                        <a href="{{ url_for('Sumitra_project') }}" class="project-link">
+                            <div class="project">
+                                <img src="{{ url_for('static', filename='projects/sumitra/Sumitra_profile.png') }}" alt="Shree Sumitra Apartments">
+                                <h3>Shree Sumitra Apartments</h3>
+                                <p>Malad West</p>
+                            </div>
+                        </a>
+                    </div>
+<!--Kunj-->
+                       <div class="project">
+                        <a href="{{ url_for('maha_kunj_project') }}" class="project-link">
+                            <div class="project">
+                                <img src="{{ url_for('static', filename='projects/maha_kunj/1.png') }}" alt="Shree Sumitra Apartments">
+                                <h3>Shree Mahalakshmi Kunj</h3>
+                                <p>Vile Parle East</p>
+                            </div>
+                        </a>
+                    </div>
+<!--  Residency-->
+                       <div class="project">
+                        <a href="{{ url_for('maha_res_project') }}" class="project-link">
+                            <div class="project">
+                                <img src="{{ url_for('static', filename='projects/maha_res/3.png') }}" alt="Shree Sumitra Apartments">
+                                    <h3>Shree Mahalakshmi<br>Residency</h3>
+                                <p>Vile Parle</p>
+                            </div>
+                        </a>
+                    </div>
+
+
+
+                        <div class="project">
+                        <a href="{{ url_for('Sumitra_project') }}" class="project-link">
+                            <div class="project">
+                                <img src="{{ url_for('static', filename='projects/sumitra/Sumitra_profile.png') }}" alt="Shree Sumitra Apartments">
+                                <h3>Shree Sumitra Apartments</h3>
+                                <p>Malad West</p>
+                            </div>
+                        </a>
+                    </div>
+                        <div class="project">
+                        <a href="{{ url_for('Sumitra_project') }}" class="project-link">
+                            <div class="project">
+                                <img src="{{ url_for('static', filename='projects/sumitra/Sumitra_profile.png') }}" alt="Shree Sumitra Apartments">
+                                <h3>Shree Sumitra Apartments</h3>
+                                <p>Malad West</p>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- Add more project items here -->
                 </div>
-            </a>
-            <a href="{{ url_for('maha_res_project') }}" class="project-link">
-                <div class="project">
-                    <img src="{{ url_for('static', filename='projects/maha_res/3.png') }}" alt="Project 3">
-                    <h3>Shree Mahalakshmi Residency</h3>
-                    <p>Mahim West</p>
-                </div>
-            </a>
+            </div>
+            <div class="arrow-buttons">
+                <button class="carousel-arrow" onclick="prevSlide()">&#8249;</button>
+                <button class="carousel-arrow" onclick="nextSlide()">&#8250;</button>
+            </div>
         </div>
-    </div>
-    <div class="arrow-buttons">
-        <button class="carousel-arrow left-arrow" onclick="moveSlide(-1)">&#8249;</button>
-        <button class="carousel-arrow right-arrow" onclick="moveSlide(1)">&#8250;</button>
-    </div>
-</section>
+    </section>
 
-<section id="blogs" class="blogs-news">
-    <br>
-    <br>
-    <h2 class="blogs-news-title">BLOGS AND NEWS</h2>
+<!--    Blogs section-->
+    <section id="blogs" class="blogs-news">
+    <h2 class="locate-title">BLOGS AND NEWS</h2>
     <p class="blogs-news-subtitle">Read our latest blogs to stay informed</p>
-    <div class="carousel-container">
-        <div class="carousel">
+    <div class="carousel-container-blogs">
+        <div class="carousel-blogs">
             {% for post in blog_posts %}
             <div class="blog-post">
                 <a href="{{ url_for('view_blog', blog_id=post.id) }}">
@@ -130,6 +163,7 @@
         <button class="carousel-arrow right-arrow" onclick="moveBlogSlide(1)">&#8250;</button>
     </div>
 </section>
+
 <br id="contact-section">
 <br>
 <br>
@@ -168,6 +202,9 @@
     </section>
 
 </div>
+
+<!--    $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$-->
+
 <div class="mobile-section">
 
 
@@ -305,9 +342,11 @@
     <br>
 <br>
     <br>
+
+
     <!-- Mobile View - Contact Section -->
-<section class="mobile-contact">
-    <div class="mobile-contact-info">
+<section class="mobile-contact" >
+    <div class="mobile-contact-info" id="mobile-contact-info">
         <h2 class="mobile-contact-title">CONTACT FOR SALE IN MUMBAI</h2>
     </div>
     <div class="mobile-contact-form">
@@ -337,6 +376,7 @@
 
 
 </div>
+</body>
 
 <style>
 
@@ -673,14 +713,14 @@
         }
 
 /* Mobile Carousel Container */
-        .mobile-carousel-container {
-            position: relative;
-            overflow: hidden;
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
+.mobile-carousel-container {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 /* Mobile Carousel */
         .mobile-carousel {
@@ -737,17 +777,20 @@
         flex-direction: row;
         transition: transform 0.5s ease;
         gap: 10px;
+        width: 100%; /* Ensure the carousel fits within the container */
     }
 
     /* Individual Blog Post Styling */
-    .mobile-blog-post {
-        flex: 0 0 100%; /* Display only one blog post at a time */
-        background: #fff;
-        border-radius: 10px;
-        overflow: hidden;
-        text-align: center;
-        padding: 10px;
-    }
+.mobile-blog-post {
+    flex: 0 0 100%; /* Occupies full width of the container */
+    max-width: 100%; /* Prevents overflow */
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    text-align: center;
+    padding: 10px;
+    box-sizing: border-box; /* Includes padding in the width calculation */
+}
 
     .mobile-blog-post img {
     width: 100%; /* Set to fill the container width */
@@ -756,12 +799,24 @@
     padding-bottom: 10px;
 }
 
-    .mobile-blog-post h3 {
-        font-size: 1.2em;
+      .mobile-blog-post h3 {
+        font-size: 1em;
         color: #333;
         margin-top: 10px;
         margin-bottom: 10px;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
     }
+    .mobile-blog-post a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Optional: Add underline on hover */
+.mobile-blog-post a:hover {
+    text-decoration: underline;
+    color: #b08931;
+}
 
     /* Mobile Arrow Button Styling */
     .mobile-arrow-buttons {

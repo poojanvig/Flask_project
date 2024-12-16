@@ -9,216 +9,331 @@
     <title>Shree Mahalakshmi Constructions - About Us</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <style>
-        body {
-            margin: 0;
-            font-family: 'Poppins', sans-serif;
-            line-height: 1.6;
-            color: #333;
-        }
+/* Global Styles */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
 
-        .about-us-section {
-            text-align: center;
-            padding: 40px 10%;
-            background-color: #ffffff;
-        }
+/* Hero Section */
+.hero-image-container {
+    position: relative;
+    width: 100%;
+    height: 60vh;
+    overflow: hidden;
+}
 
-        .hero-image-container {
-            position: relative;
-            width: 100%;
-            height: 60vh;
-            overflow: hidden;
-        }
+.hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.7);
+}
 
-        .hero-image {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            filter: brightness(0.7);
-        }
+.hero-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #fff;
+}
 
-        .hero-content {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            text-align: center;
-            color: #fff;
-        }
+.hero-content h1 {
+    font-size: 2.5em;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
 
-        .hero-content h1 {
-            font-size: 2.5em;
-            font-weight: 600;
-            margin-bottom: 10px;
-        }
+.hero-content .sub-heading {
+    font-size: 1.2em;
+    color: #c59542;
+    font-weight: 600;
+}
 
-        .hero-content .sub-heading {
-            font-size: 1.2em;
-            color: #c59542;
-            font-weight: 600;
-        }
+/* About Us Section */
+.about-us-section {
+    text-align: center;
+    padding: 40px 10%;
+    background-color: #ffffff;
+}
 
-        .about-us-text h1 {
-            font-size: 2em;
-            color: #002b49;
-            font-weight: 600;
-            margin-bottom: 15px;
-        }
+.about-us-text h1 {
+    font-size: 2em;
+    color: #002b49;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
 
-        .about-us-text .sub-heading {
-            font-size: 1.1em;
-            color: #c59542;
-            font-weight: 600;
-            margin-bottom: 20px;
-        }
+.about-us-text .sub-heading {
+    font-size: 1.1em;
+    color: #c59542;
+    font-weight: 600;
+    margin-bottom: 20px;
 
-        .about-us-text p {
-            font-size: 1em;
-            color: #555;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        .vision-mission-section {
-            text-align: center;
-            /*padding: 40px 10%;*/
-            background-color: #ffffff;
-        }
+}
 
-        .vision-mission-image {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
+.about-us-text p {
+    font-size: 1em;
+    color: #555;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
 
-        .vision-mission-text {
-            padding: 40px 5%;
-            text-align: center;
-        }
+/* Vision & Mission Section */
+.vision-mission-section {
+    text-align: center;
+    background-color: #ffffff;
+}
 
-        .vision-mission-text h1 {
-            font-size: 2em;
-            color: #002b49;
-            font-weight: 600;
-            margin-bottom: 15px;
-        }
+.vision-mission-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
 
-        .vision-mission-text .sub-heading {
-            font-size: 1.1em;
-            color: #c59542;
-            font-weight: 600;
-            margin-bottom: 20px;
-        }
+.vision-mission-text {
+    padding: 40px 5%;
+    text-align: center;
+}
 
-        .vision-mission-text p {
-            font-size: 1em;
-            color: #555;
-            max-width: 800px;
-            margin: 0 auto;
-            margin-bottom: 20px;
-        }
+.vision-mission-text h1 {
+    font-size: 2em;
+    color: #002b49;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
 
-        /*#######*/
+.vision-mission-text .sub-heading {
+    font-size: 1.1em;
+    color: #c59542;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
 
-        .leadership-section {
-            text-align: center;
-            /*padding: 40px 10%;*/
-            background-color: #ffffff;
-        }
+.vision-mission-text p {
+    font-size: 1em;
+    color: #555;
+    max-width: 800px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
 
-        .leadership-image {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
+/* Leadership Section */
+.leadership-section {
+    text-align: center;
+    background-color: #ffffff;
+}
 
-        .leadership-text {
-            padding: 40px 5%;
-            text-align: center;
-        }
+.leadership-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
 
-        .leadership-text h1 {
-            font-size: 2em;
-            color: #c59542;
-            font-weight: 600;
-            margin-bottom: 15px;
-        }
+.leadership-text {
+    padding: 40px 5%;
+    text-align: center;
+}
 
-        .leadership-text p {
-            font-size: 1em;
-            color: #555;
-            max-width: 800px;
-            margin: 0 auto;
-            margin-bottom: 20px;
-        }
+.leadership-text h1 {
+    font-size: 2em;
+    color: #c59542;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
 
-        /*####*/
+.leadership-text p {
+    font-size: 1em;
+    color: #555;
+    max-width: 800px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
 
-        .management-section {
-            text-align: center;
-            /*padding: 40px 10%;*/
-            background-color: #ffffff;
-        }
+/* Management Section */
+.management-section {
+    text-align: center;
+    background-color: #ffffff;
+    padding: 40px 10%;
+}
 
-        .management-heading {
-            font-size: 2em;
-            font-weight: 600;
-            color: #333;
-            margin-bottom: 40px;
-        }
+.management-heading {
+    font-size: 2em;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 40px;
+}
 
-        .management-container {
-            display: flex;
-            flex-direction: column;
-            gap: 40px;
-            align-items: center;
-        }
+.management-container {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    align-items: center;
+}
 
-        .management-profile {
-            display: flex;
-            align-items: flex-start;
-            width: 100%;
-            max-width: 800px;
-            gap: 20px;
-            border-bottom: 1px solid #ddd;
-            padding-bottom: 30px;
-            margin-bottom: 20px;
-        }
+.management-profile {
+    display: flex;
+    align-items: flex-start;
+    width: 100%;
+    max-width: 800px;
+    gap: 20px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 30px;
+    margin-bottom: 20px;
+}
 
-        .management-profile img {
-            width: 250px;
-            height: auto;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
+.management-profile img {
+    width: 250px;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
 
-        .management-details {
-            text-align: left;
-        }
+.management-details {
+    text-align: left;
+}
 
-        .management-details h3 {
-            font-size: 1.5em;
-            color: #c59542;
-            font-weight: 600;
-            margin: 0 0 10px 0;
-        }
+.management-details h3 {
+    font-size: 1.5em;
+    color: #c59542;
+    font-weight: 600;
+    margin: 0 0 10px 0;
+}
 
-        .management-details h4 {
-            font-size: 1em;
-            font-weight: 400;
-            color: #777;
-            margin: 0 0 20px 0;
-        }
+.management-details h4 {
+    font-size: 1em;
+    font-weight: 400;
+    color: #777;
+    margin: 0 0 20px 0;
+}
 
-        .management-details p {
-            font-size: 1em;
-            color: #555;
-            margin: 0;
-        }
+.management-details p {
+    font-size: 1em;
+    color: #555;
+    margin: 0;
+}
 
-        .management-footer-image {
-            width: 100%;
-            height: auto;
-            margin-top: 40px;
-        }
+.management-footer-image {
+    width: 100%;
+    height: auto;
+    margin-top: 40px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    /* Adjust hero image height */
+    .hero-image-container {
+        height: 40vh;
+    }
+
+    /* Reduce font sizes */
+    .hero-content h1 {
+        font-size: 2em;
+    }
+
+    .hero-content .sub-heading {
+        font-size: 1em;
+    }
+
+    .about-us-text h1,
+    .vision-mission-text h1,
+    .leadership-text h1,
+    .management-heading {
+        font-size: 1.5em;
+    }
+
+    .about-us-text .sub-heading,
+    .vision-mission-text .sub-heading {
+        font-size: 1em;
+    }
+
+    /* Adjust padding */
+    .about-us-section,
+    .vision-mission-text,
+    .leadership-text,
+    .management-section {
+        padding: 20px 5%;
+    }
+
+    /* Management Profiles */
+    .management-container {
+        gap: 20px;
+    }
+
+    .management-profile {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .management-profile img {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .management-details {
+        text-align: center;
+    }
+
+    .management-details h3 {
+        font-size: 1.3em;
+    }
+
+    .management-details h4 {
+        font-size: 1em;
+    }
+
+    .management-details p {
+        font-size: 0.95em;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Further reduce font sizes for smaller screens */
+    .hero-content h1 {
+        font-size: 1.8em;
+    }
+
+    .hero-content .sub-heading {
+        font-size: 0.9em;
+    }
+
+    .about-us-text h1,
+    .vision-mission-text h1,
+    .leadership-text h1,
+    .management-heading {
+        font-size: 1.3em;
+    }
+
+    .about-us-text .sub-heading,
+    .vision-mission-text .sub-heading {
+        font-size: 0.9em;
+    }
+
+    .about-us-text p,
+    .vision-mission-text p,
+    .leadership-text p,
+    .management-details p {
+        font-size: 0.9em;
+    }
+
+    /* Adjust padding */
+    .about-us-section,
+    .vision-mission-text,
+    .leadership-text,
+    .management-section {
+        padding: 15px 3%;
+    }
+
+    .management-profile img {
+        max-width: 250px;
+    }
+}
 
     </style>
 </head>
@@ -237,7 +352,7 @@
             <p>Development is the cornerstone of Shree Mahalakshmi Constructions' success. Over the years, the company
                 has fine-tuned its approach to key development components such as site selection, location, plot size,
                 design, and value generation. Founded in 2013 as a Private Partnership Company, we have meticulously
-                shaped our identity, mission, and purpose. At Shree Mahalakshmi Constructions, we prioritize adopting
+                shaped our identity, mission, and purpose. <br>At Shree Mahalakshmi Constructions, we prioritize adopting
                 the highest business traits, ensuring that every engagement nurtures long-term relationships with
                 landowners, customers, investors, and other business partners.</p>
         </div>
@@ -274,36 +389,34 @@
 
         <!-- Management Profiles -->
         <div class="management-container">
-            <!-- Profile 1 -->
+            <!-- Hiren Sunil Wadhare -->
             <div class="management-profile">
                 <img src="/static/images/profile_face.jpeg" alt="Hiren Sunil Wadhare">
                 <div class="management-details">
                     <h3>Hiren Sunil Wadhare</h3>
-                    <h4>COO - Project Strategy and Execution</h4>
-                    <p>Hiren Sunil Wadhare, our founder, comes from a family with a rich history in property development. As a third-generation developer, Hiren has been immersed in Constructions from a young age, gaining hands-on experience alongside his grandfather, father, and uncle. With a Master's and Bachelor's degree in Management Studies and two years of experience working as a Relationship Officer at Abu Dhabi Commercial Bank in Dubai, Hiren has honed his sales techniques and ability to handle complex situations involving investors, landowners, and customers.</p>
-                    <p>Hiren's vision is to develop plots under 500 sq. meters that are often overlooked by larger developers. Despite the challenges and lower profits associated with small plots, his acumen and decision-making have led to significant successes, such as completing his first project on a 225 sq. meter plot in Liberty Garden, Malad West, Mumbai.</p>
+                    <h4>Founder & Managing Partner</h4>
+                    <p>He holds a Master’s and Bachelor’s degree in Management Studies from the University of Mumbai. Coming from a Family Business Background, Mr. Hiren Sunil Wadhare is a third-generation property developer who had been with his grandfather, father and uncle on their family construction sites from his childhood days which helped him gain an experience of onsite work and thereby being a good listener and an excellent observer which helped him start Shree Mahalakshmi Constructions at the age of 23.
+                    He has 2 years of experience for working in Abu Dhabi Commercial Bank at Dubai as a Relationship Officer that has helped him acquire amazing sales technique and handle difficult situation or queries in dealing with Investors, Land Owners and Customers. He has 10+ years of experience in various aspects of Real Estate Business. </p>
                 </div>
             </div>
 
-            <!-- Profile 2 (if needed) -->
+            <!-- Mrs. Leena Sunil Wadhare  -->
             <div class="management-profile">
-                <img src="/static/images/profile_face.jpeg" alt="Hiren Sunil Wadhare">
+                <img src="/static/images/profile_face.jpeg" alt="Leena Sunil Wadhare">
                 <div class="management-details">
-                    <h3>Hiren Sunil Wadhare</h3>
-                    <h4>COO - Project Strategy and Execution</h4>
-                    <p>Hiren Sunil Wadhare, our founder, comes from a family with a rich history in property development. As a third-generation developer, Hiren has been immersed in Constructions from a young age, gaining hands-on experience alongside his grandfather, father, and uncle. With a Master's and Bachelor's degree in Management Studies and two years of experience working as a Relationship Officer at Abu Dhabi Commercial Bank in Dubai, Hiren has honed his sales techniques and ability to handle complex situations involving investors, landowners, and customers.</p>
-                    <p>Hiren's vision is to develop plots under 500 sq. meters that are often overlooked by larger developers. Despite the challenges and lower profits associated with small plots, his acumen and decision-making have led to significant successes, such as completing his first project on a 225 sq. meter plot in Liberty Garden, Malad West, Mumbai.</p>
+                    <h3>Mrs. Leena Sunil Wadhare</h3>
+                    <h4>Founder & Partner</h4>
+                <p>She holds a bachelor’s degree in Commerce from the University of Mumbai. She has been associated with the company since its incorporation. She has over 25 years of experience in different aspects of her entrepreneurial journey and 10 years of experience in various aspects from real estate business.</p>
                 </div>
             </div>
 
-            <!-- Profile 3 (if needed) -->
+            <!-- Mr. Sunil Meghraj Wadhare -->
             <div class="management-profile">
-                <img src="/static/images/profile_face.jpeg" alt="Hiren Sunil Wadhare">
+                <img src="/static/images/profile_face.jpeg" alt="Mr. Sunil Meghraj Wadhare">
                 <div class="management-details">
-                    <h3>Hiren Sunil Wadhare</h3>
-                    <h4>COO - Project Strategy and Execution</h4>
-                    <p>Hiren Sunil Wadhare, our founder, comes from a family with a rich history in property development. As a third-generation developer, Hiren has been immersed in Constructions from a young age, gaining hands-on experience alongside his grandfather, father, and uncle. With a Master's and Bachelor's degree in Management Studies and two years of experience working as a Relationship Officer at Abu Dhabi Commercial Bank in Dubai, Hiren has honed his sales techniques and ability to handle complex situations involving investors, landowners, and customers.</p>
-                    <p>Hiren's vision is to develop plots under 500 sq. meters that are often overlooked by larger developers. Despite the challenges and lower profits associated with small plots, his acumen and decision-making have led to significant successes, such as completing his first project on a 225 sq. meter plot in Liberty Garden, Malad West, Mumbai.</p>
+                    <h3>Mr. Sunil Meghraj Wadhare</h3>
+                    <h4>Co- Founder & Chief Executive Officer</h4>
+                    <p>Mr. Sunil Meghraj Wadhare is the Chief Executive Officer at Shree Mahalakshmi Constructions where he leads all the site management and operations for Mumbai. He has been associated with the company since its incorporation. He has overall 40 years of experience in the different aspects of business. Mr. Sunil Started his career by starting a Steel Manufacturing unit in the outskirts of Mumbai which is an essential product for the construction of buildings. He has vast experience of more than 35+ years in the steel industry and was also managing 3 steel manufacturing units spanning over an acre each simultaneously. </p>
                 </div>
             </div>
         </div>

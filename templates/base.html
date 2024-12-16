@@ -37,7 +37,7 @@
                 <li><a href="{{ url_for('index') }}">Home</a></li>
                 <li><a href="{{ url_for('about') }}">About Us</a></li>
                 <li><a href="{{ url_for('projects') }}">Projects</a></li>
-                <li><a href="{{ url_for('index') }}#blogs">News</a></li>
+                <li><a href="{{ url_for('index') }}#blogs" class="news-link">News</a></li>
             </ul>
         </nav>
     </aside>
@@ -93,8 +93,30 @@
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 
     <script src="https://cdn.botpress.cloud/webchat/v2.2/inject.js"></script>
-<script src="https://files.bpcontent.cloud/2024/10/10/06/20241010065953-93S3Z088.js"></script>
+    <script src="https://files.bpcontent.cloud/2024/10/10/06/20241010065953-93S3Z088.js"></script>
 
 </body>
+<script>
+    function adjustNewsLink() {
+        var mobileBreakpoint = 768; // Define your mobile breakpoint
+        var isMobile = window.innerWidth <= mobileBreakpoint;
+
+        var newsLink = document.querySelector('.news-link');
+
+        if (newsLink) {
+            if (isMobile) {
+                newsLink.setAttribute('href', '{{ url_for('index') }}#mobile-blogs');
+            } else {
+                newsLink.setAttribute('href', '{{ url_for('index') }}#blogs');
+            }
+        }
+    }
+
+    // Run the function on page load
+    document.addEventListener('DOMContentLoaded', adjustNewsLink);
+
+    // Run the function on window resize
+    window.addEventListener('resize', adjustNewsLink);
+</script>
 
 </html>

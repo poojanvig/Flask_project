@@ -1,0 +1,905 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shree Mahalakshmi Trinity</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            overflow-x: hidden;
+        }
+
+        .hero-section {
+            position: relative;
+            width: 100%;
+            height: 90vh; /* Ensure hero section fills the viewport height */
+            overflow: hidden;
+
+        }
+
+
+        .hero-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Ensures the image covers the entire hero section */
+        }
+
+        .hero-content {
+            position: absolute;
+            top: 25%;
+            left: 5%;
+            transform: translate(-5%, -15%);
+
+
+            color: #002b49;
+            text-align: left;
+            max-width: 650px;
+        }
+
+        .hero-content h1 {
+            font-size: 2em;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #002b49; /* Dark blue color for heading */
+        }
+
+        .hero-content p {
+            /*font-size: 1.1em;*/
+            margin-bottom: 20px;
+        }
+
+        .enquire-button {
+            padding: 15px 30px;
+            font-size: 1em;
+            color: #002b49;
+            background: transparent;
+            border: 2px solid #002b49;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+            text-transform: uppercase;
+            text-align: center;
+            /*background-color: rgba(255, 255, 255, 0);*/
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+        }
+
+        .enquire-button:hover {
+            background: #002b49;
+            color: #fff;
+                box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-content h1, .hero-content p, .enquire-button {
+            opacity: 0;
+            animation: fadeIn 1s ease-in-out forwards;
+        }
+
+        .hero-content h1 {
+            animation-delay: 0.5s;
+        }
+
+        .hero-content p {
+            animation-delay: 1s;
+        }
+
+        .enquire-button {
+            animation-delay: 1.5s;
+        }
+
+        .scroll-down-indicator {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 7em; /* Increase font size for better visibility */
+            color: #ffffff; /* Gold-like color to match branding */
+            animation: bounce 1s infinite alternate;
+            cursor: pointer; /* Indicates interactiveness */
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3); /* Add a shadow for better visibility */
+        }
+
+        @keyframes bounce {
+            0% {
+                transform: translateX(-50%) translateY(0);
+            }
+            100% {
+                transform: translateX(-50%) translateY(15px);
+            }
+        }
+
+        /* Container for Map and Project Info */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 40px 10%;
+    gap: 30px;
+    align-items: stretch; /* This ensures both sections stretch to the same height */
+
+}
+
+
+/* Map Section */
+.map-section {
+    flex: 1;
+    min-width: 300px;
+    height: 450px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.map-section iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* Project Info Section */
+.project-info {
+    flex: 1;
+    min-width: 300px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 30px 20px;
+    height: 450px;
+    text-align: left;
+}
+
+.project-info h2 {
+    font-weight: 600;
+    font-size: 1.5em;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 10px;
+    color: #222;
+}
+
+.project-info nav {
+    margin: 15px 0;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+    font-weight: 500;
+}
+
+.project-info nav a {
+    text-decoration: none;
+    color: #7b7b7b;
+    font-weight: 600;
+    margin-right: 20px;
+    transition: color 0.3s ease;
+}
+
+.project-info nav a.active {
+    color: #000;
+    border-bottom: 2px solid #222;
+}
+
+.project-info nav a:hover {
+    color: #002b49;
+}
+
+.project-description {
+    font-weight: 400;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    color: #444;
+}
+
+/* Floor Plan Section */
+.floor-plan-section {
+    margin-top: 40px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+}
+
+.floor-plan-section h3 {
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    color: #222;
+    font-size: 1.5em;
+}
+
+.floor-plan-images {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.floor-plan-images img {
+    width: 48%;
+    max-width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+.gallery-section {
+    text-align: center;
+    padding: 40px 10%;
+}
+
+.gallery-section h3 {
+    font-weight: 600;
+    font-size: 1.8em;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    color: #222;
+}
+
+.gallery {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.gallery-item {
+    flex: 1;
+    min-width: 180px;
+    max-width: 300px;
+    text-align: center;
+}
+
+.gallery-item img {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-item img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.gallery-item p {
+    margin-top: 10px;
+    color: #444;
+    font-weight: 500;
+}
+
+.site-visit-button {
+    margin-top: 40px;
+}
+
+/*:root {*/
+/*    --brown-color: #c59542; !* Adjust to your root color *!*/
+/*}*/
+
+.book-site-visit {
+    padding: 15px 30px;
+    font-size: 1em;
+    background-color: var(--brown-color);
+    border: 2px solid var(--brown-color);
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.book-site-visit:hover {
+    background-color: #fff;
+    color: var(--brown-color);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+/* FAQ Section Styling */
+.faq-section {
+    padding: 50px 10%;
+    text-align: left;
+}
+
+.faq-section h3 {
+    text-transform: uppercase;
+    font-size: 1.5em;
+    font-weight: 600;
+    color: #002b49;
+    margin-bottom: 30px;
+}
+
+.faq {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two columns each taking 50% */
+    gap: 20px;
+}
+
+.faq-item {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.faq-question {
+    width: 100%;
+    padding: 20px;
+    background-color: #fff;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    text-align: left;
+    font-size: 1em;
+    font-weight: 600;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.plus-icon {
+    font-size: 1.5em;
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.05s ease; /* Smooth transition for height */
+    padding: 0 20px; /* Padding set to 0 initially to ensure smooth collapse */
+    background-color: #f9f9f9;
+    border-top: 1px solid #ddd;
+    font-size: 0.95em;
+    line-height: 1.5;
+    opacity: 0; /* Start with hidden */
+}
+
+.faq-answer.show {
+    max-height: 300px; /* Arbitrarily high value to accommodate answer content */
+    padding: 15px 20px; /* Add padding when visible */
+    opacity: 1;
+    transition: max-height 0.1s ease, opacity 0.5s ease;
+}
+/*<style>*/
+.emi-section {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 5%;
+    align-items: stretch;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.emi-image {
+    flex: 1;
+    min-width: 300px;
+    max-width: 50%;
+    height: 700px; /* Fixed height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.emi-image img {
+    width: 100%;
+    height: 100%; /* Maintain aspect ratio */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.main-container {
+    flex: 1;
+    min-width: 300px;
+    max-width: 45%;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.container h1, .container h3 {
+    text-align: center;
+    /*margin-bottom: 20px;*/
+    font-weight: bold;
+    color: #333;
+}
+
+.form-group {
+    width: 100%;
+    /*margin-bottom: 20px;*/
+}
+
+.form-group label {
+    font-weight: 600;
+    color: #444;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.form-group button {
+    width: 100%;
+    padding: 15px;
+    background-color: #c59542;
+    color: #fff;
+    font-weight: 600;
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s;
+}
+
+.form-group button:hover {
+    background-color: #a67a33;
+    transform: scale(1.05);
+}
+
+.results {
+    margin-top: 20px;
+    width: 100%;
+}
+
+.result {
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    color: #333;
+}
+
+.analysis {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.breakdown {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.breakdown th, .breakdown td {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+.breakdown th {
+    background-color: #c59542;
+    color: #fff;
+}
+
+@media (max-width: 768px) {
+    .emi-section {
+        flex-direction: column;
+        padding: 20px 5%;
+    }
+
+    .emi-image, .main-container {
+        max-width: 100%;
+    }
+}
+
+
+
+/*&&&&&&&&&&&&&&&&&&&&&&&&*/
+
+    </style>
+</head>
+
+<body>
+    <section class="hero-section">
+        <img src="/static/projects/trinity/trinityHero.png" alt="Shree Mahalakshmi Trinity" class="hero-image">
+        <div class="hero-content">
+            <h1>SHREE MAHALAKSHMI TRINITY</h1>
+            <p>Apartments in Vile Parle East </p>
+            <p>Total Number of flats: 22, 3 Flats per floor</p>
+            <p>Net Plot Area: 440.40 Sq. Meters</p></p>
+            <button class="enquire-button">ENQUIRE NOW</button>
+        </div>
+
+    </section>
+<div class="scroll-down-indicator" aria-label="Scroll Down">⇊</div>
+<!-- Container for the whole section -->
+
+<section class="container">
+
+<div class="container">
+    <!-- Map Section -->
+    <div class="map-section">
+        <!-- You can embed Google Maps here -->
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3769.974485844747!2d72.8509466!3d19.108775199999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c9a66e6ae9bd%3A0xac0afc219b9dc35a!2sKrishnakunj%20Building!5e0!3m2!1sen!2sin!4v1730429281194!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>    </div>
+
+    <!-- Project Overview Section -->
+<div class="project-info">
+    <h2 id="section-title">Project Overview</h2>
+    <nav>
+        <a href="#" class="nav-link active" data-section="overview" onclick="showSection(event)">Project Overview</a> |
+        <a href="#" class="nav-link" data-section="amenities" onclick="showSection(event)">Amenities</a> |
+        <a href="#" class="nav-link" data-section="rera" onclick="showSection(event)">RERA Numbers</a>
+    </nav>
+    <div id="project-content">
+        <p class="project-description" data-section-content="overview">
+            Shree Mahalakshmi Kunj, located in Vile Parle East, Mumbai, is a premium residential project with 22 flats, spread over 8 floors above a stilt level. The project, currently at the plinth stage, covers a net plot area of 440.40 sq. meters, promising a luxurious and convenient urban lifestyle.
+        </p>
+        <p class="project-description" data-section-content="amenities" style="display:none;">
+            The project offers a grand entrance lobby, high-speed elevator, gymnasium, independent car parking, and a range of premium internal fittings like polished glazed vitrified tiles and anodized French windows.
+        </p>
+        <p class="project-description" data-section-content="rera" style="display:none;">
+            RERA Number: MAH202300123 | Registered as per government regulations for transparency and buyer protection.
+        </p>
+    </div>
+</div>
+    </div>
+
+
+
+
+<!-- Floor Plan Section -->
+<!-- Floor Plan Section -->
+<section>
+<div class="floor-plan-section">
+    <h3>Floor Plan</h3>
+    <div class="floor-plan-images">
+        <img src="/static/projects/trinity/3.png" alt="2nd & 3rd Floor Plan">
+        <img src="/static/projects/trinity/4.png" alt="5th & 6th Floor Plan">
+        <img src="/static/projects/trinity/5.png" alt="7th & 8th Floor Plan">
+    </div>
+</div>
+</section>
+
+
+<!-- Gallery Section -->
+<section class="gallery-section">
+    <h3>Gallery</h3>
+    <div class="gallery">
+        <div class="gallery-item">
+            <img src="/static/projects/maha_kunj/Swimming Pool.png" alt="Swimming Pool">
+            <p>Swimming Pool</p>
+        </div>
+        <div class="gallery-item">
+            <img src="/static/projects/maha_kunj/Sitting Area.png" alt="Sitting Area">
+            <p>Sitting Area</p>
+        </div>
+        <div class="gallery-item">
+            <img src="/static/projects/maha_kunj/Kids Play Area.png" alt="Kids Play Area">
+            <p>Kids Play Area</p>
+        </div>
+        <div class="gallery-item">
+            <img src="/static/projects/maha_kunj/Elevation.png" alt="Elevation">
+            <p>Elevation</p>
+        </div>
+        <div class="gallery-item">
+            <img src="/static/projects/maha_kunj/Elevation Street View.png" alt="Elevation Street View">
+            <p>Elevation Street View</p>
+        </div>
+    </div>
+
+    <div class="site-visit-button">
+        <button class="book-site-visit">Book a Site Visit</button>
+    </div>
+</section>
+
+<div class="faq-section">
+    <h3>Frequently Asked Questions</h3>
+    <div class="faq">
+        <div class="faq-item">
+            <button class="faq-question">
+                What is the current construction status of Shree Mahalakshmi Kunj?
+                <span class="plus-icon">+</span>
+            </button>
+            <div class="faq-answer">
+                The project has received the Initial Occupation Document (IOD) and is currently completing the plinth stage, with construction anticipated to progress steadily.
+            </div>
+        </div>
+        <div class="faq-item">
+            <button class="faq-question">
+             How many flats and floors are there in Shree Mahalakshmi Kunj?
+                <span class="plus-icon">+</span>
+            </button>
+            <div class="faq-answer">
+                The project comprises 22 flats, with 3 flats per floor, across 8 floors above a stilt level.
+            </div>
+        </div>
+        <div class="faq-item">
+            <button class="faq-question">
+                What types of amenities are available for residents?
+                <span class="plus-icon">+</span>
+            </button>
+            <div class="faq-answer">
+                Residents can enjoy a range of amenities, including a grand entrance lobby, high-speed elevator, gymnasium, kids' play area, viewing deck, and independent car parking. Premium internal fittings, such as polished vitrified tiles and anodized French windows, are also provided.
+            </div>
+        </div>
+        <div class="faq-item">
+            <button class="faq-question">
+                Where is Shree Mahalakshmi Kunj located?
+                <span class="plus-icon">+</span>
+            </button>
+            <div class="faq-answer">
+                Shree Mahalakshmi Kunj is located on Sahakar Road, behind the Tejpal Scheme in Vile Parle East, Mumbai, with easy access to essential services and transportation in the area.
+            </div>
+        </div>
+    </div>
+</div>
+
+ <section class="emi-section">
+        <!-- Image Section -->
+        <div class="emi-image">
+            <img src="/static/projects/maha_kunj/emi-image.png" alt="Building Image">
+        </div>
+
+
+    <div class="header">
+    </div>
+    <div class="main-container">
+        <div class="container">
+            <h1>EMI Calculator</h1>
+            <div class="form-group">
+                <label for="amount">Loan Amount:</label>
+                <input type="text" id="amount" placeholder="Enter loan amount" oninput="formatNumber(this)">
+                <span id="amount-error" style="color: red; display: none;">Please enter a valid loan amount.</span>
+            </div>
+            <div class="form-group">
+                <label for="rate">Annual Interest Rate (%):</label>
+                <input type="number" id="rate" placeholder="Enter interest rate">
+                <span id="rate-error" style="color: red; display: none;">Please enter a valid interest rate.</span>
+            </div>
+            <div class="form-group">
+                <label for="tenure">Tenure (years):</label>
+                <input type="number" id="tenure" placeholder="Enter loan tenure">
+                <span id="tenure-error" style="color: red; display: none;">Please enter a valid loan tenure.</span>
+            </div>
+            <div class="form-group">
+                <button id="calculate-button" onclick="calculateEMI()" disabled>Calculate EMI</button>
+            </div>
+            <div class="results" id="results">
+                <div class="result" id="result"></div>
+                <div class="analysis">
+                    <h3>Loan Analysis</h3>
+                    <p>Total Payment: ₹<span id="totalPayment"></span></p>
+                    <p>Total Interest: ₹<span id="totalInterest"></span></p>
+                </div>
+                <h3>Monthly Breakdown</h3>
+                <table class="breakdown" id="breakdown">
+                    <thead>
+                        <tr>
+                            <th>Month</th>
+                            <th>Principal</th>
+                            <th>Interest</th>
+                            <th>Balance</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Monthly breakdown will be appended here -->
+                    </tbody>
+                </table>
+                <canvas id="paymentBreakdownChart" width="400" height="400" style="margin: 20px auto; display: block;"></canvas>
+
+            </div>
+        </div>
+
+    </div>
+    </section>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</body>
+
+</html>
+
+
+<script>
+    function showSection(event) {
+        event.preventDefault();
+        const selectedSection = event.target.getAttribute('data-section');
+
+        // Remove active class from all links
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.classList.remove('active');
+        });
+
+        // Add active class to the clicked link
+        event.target.classList.add('active');
+
+        // Update the content
+        document.querySelectorAll('[data-section-content]').forEach(section => {
+            if (section.getAttribute('data-section-content') === selectedSection) {
+                section.style.display = 'block';
+            } else {
+                section.style.display = 'none';
+            }
+        });
+
+        // Update the title
+        let newTitle = "";
+        switch (selectedSection) {
+            case "overview":
+                newTitle = "Project Overview";
+                break;
+            case "amenities":
+                newTitle = "Amenities";
+                break;
+            case "rera":
+                newTitle = "RERA Numbers";
+                break;
+        }
+        document.getElementById('section-title').textContent = newTitle;
+    }
+
+
+    // JavaScript to toggle FAQ answers visibility
+    document.addEventListener("DOMContentLoaded", function () {
+        const faqItems = document.querySelectorAll(".faq-item");
+
+        faqItems.forEach(item => {
+            const button = item.querySelector(".faq-question");
+            const answer = item.querySelector(".faq-answer");
+            const icon = button.querySelector(".plus-icon");
+
+            button.addEventListener("click", function () {
+                const isExpanded = answer.classList.contains("show");
+
+                // Hide other answers if expanded
+                faqItems.forEach(i => {
+                    i.querySelector(".faq-answer").classList.remove("show");
+                    i.querySelector(".plus-icon").innerText = "+";
+                });
+
+                // Toggle current item
+                if (!isExpanded) {
+                    answer.classList.add("show");
+                    icon.innerText = "-";
+                } else {
+                    icon.innerText = "+";
+                }
+            });
+        });
+    });
+
+
+    let pieChart;
+
+    document.addEventListener("DOMContentLoaded", function () {
+        // Enable button only if all inputs are valid
+        document.querySelectorAll("input").forEach(input => {
+            input.addEventListener("input", validateInputs);
+        });
+    });
+
+    function formatNumber(input) {
+        const value = input.value.replace(/\D/g, '');
+        input.value = new Intl.NumberFormat('en-IN').format(value);
+    }
+
+    function validateInputs() {
+        const amount = document.getElementById('amount').value.replace(/,/g, '');
+        const rate = document.getElementById('rate').value;
+        const tenure = document.getElementById('tenure').value;
+
+        let isValid = true;
+
+        if (!amount || isNaN(amount) || amount <= 0) {
+            document.getElementById('amount-error').style.display = 'block';
+            isValid = false;
+        } else {
+            document.getElementById('amount-error').style.display = 'none';
+        }
+
+        if (!rate || isNaN(rate) || rate <= 0) {
+            document.getElementById('rate-error').style.display = 'block';
+            isValid = false;
+        } else {
+            document.getElementById('rate-error').style.display = 'none';
+        }
+
+        if (!tenure || isNaN(tenure) || tenure <= 0) {
+            document.getElementById('tenure-error').style.display = 'block';
+            isValid = false;
+        } else {
+            document.getElementById('tenure-error').style.display = 'none';
+        }
+
+        document.getElementById('calculate-button').disabled = !isValid;
+    }
+
+    function calculateEMI() {
+        const amount = parseFloat(document.getElementById('amount').value.replace(/,/g, ''));
+        const rate = parseFloat(document.getElementById('rate').value);
+        const tenure = parseFloat(document.getElementById('tenure').value);
+
+        if (!amount || !rate || !tenure) {
+            alert('Please fill all the fields');
+            return;
+        }
+
+        const monthlyRate = rate / 12 / 100;
+        const numberOfMonths = tenure * 12;
+        const emi = (amount * monthlyRate * Math.pow(1 + monthlyRate, numberOfMonths)) / (Math.pow(1 + monthlyRate, numberOfMonths) - 1);
+
+        document.getElementById('result').innerText = `Monthly EMI: ₹${emi.toFixed(2)}`;
+
+        const totalPayment = emi * numberOfMonths;
+        const totalInterest = totalPayment - amount;
+
+        document.getElementById('totalPayment').innerText = totalPayment.toFixed(2);
+        document.getElementById('totalInterest').innerText = totalInterest.toFixed(2);
+
+        generateMonthlyBreakdown(amount, monthlyRate, emi, numberOfMonths);
+        generatePieChart(amount, totalInterest);
+    }
+
+    function generateMonthlyBreakdown(amount, monthlyRate, emi, numberOfMonths) {
+        const breakdown = document.getElementById('breakdown').getElementsByTagName('tbody')[0];
+        breakdown.innerHTML = '';
+
+        let balance = amount;
+
+        for (let i = 1; i <= numberOfMonths; i++) {
+            const interest = balance * monthlyRate;
+            const principal = emi - interest;
+            balance -= principal;
+
+            const row = breakdown.insertRow();
+            row.insertCell(0).innerText = i;
+            row.insertCell(1).innerText = principal.toFixed(2);
+            row.insertCell(2).innerText = interest.toFixed(2);
+            row.insertCell(3).innerText = balance.toFixed(2);
+        }
+    }
+
+    function generatePieChart(amount, totalInterest) {
+        const pieCtx = document.getElementById('paymentBreakdownChart').getContext('2d');
+
+        if (pieChart) {
+            pieChart.destroy();
+        }
+
+        pieChart = new Chart(pieCtx, {
+            type: 'pie',
+            data: {
+                labels: ['Principal Loan Amount', 'Total Interest'],
+                datasets: [{
+                    data: [amount, totalInterest],
+                    backgroundColor: ['#4CAF50', '#FF6384'],
+                    hoverBackgroundColor: ['#66BB6A', '#FF6384']
+                }]
+            },
+            options: {
+                responsive: true,
+                title: {
+                    display: true,
+                    text: 'Break-up of Total Payment'
+                }
+            }
+        });
+    }
+
+
+</script>
+
+
+
+
+
+{% endblock %}

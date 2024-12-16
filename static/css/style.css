@@ -416,87 +416,51 @@ body {
     background-color: #a47630;
 }
 
-
-
-/* Featured Projects Section Styles */
 .featured-projects {
-    font-family: 'Wittgenstein', serif;
-    text-align: center;
-    padding: 50px;
-    background-color: #fff;
-    margin-top: 50px;
-}
-
-.featured-projects-title {
-    font-size: 2em;
-    color: #c59542; /* Gold-like color */
-    font-weight: 500;
-    margin-bottom: 20px;
-    position: relative;
+            text-align: center;
+            padding: 50px 20px;
+        }
+.projects-container {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 20px;
-}
-
-.featured-projects-title::before,
-.featured-projects-title::after {
-    content: "";
-    width: 425px; /* Adjust this value to decrease or increase line length */
-    height: 1px;
-    background: #000;
-}
-
-.featured-projects-subtitle {
-    font-size: 1.2em;
-    color: #333;
-    margin-bottom: 30px;
-}
-
-.carousel-container {
     position: relative;
-    max-width: 100%;
+    max-width: 1000px;
     margin: 0 auto;
     overflow: hidden;
+    flex-direction: column;
 }
-
-.carousel {
+.projects-wrapper {
+    width: 100%;
+    overflow: hidden;
+}
+.projects {
     display: flex;
     transition: transform 0.5s ease-in-out;
-    will-change: transform;
-}
-
-.project-link {
-    text-decoration: none; /* Remove underline */
-    color: inherit; /* Inherit color from the parent container */
 }
 .project {
-    flex: 0 0 33%; /* Default - display 3 projects at a time */
-    box-sizing: border-box;
-    padding: 0 20px;
-    transition: transform 0.3s, box-shadow 0.3s;
-
+    width: 300px;
+    flex: 0 0 auto;
+    margin: 15px;
+    background: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
 }
-.project:hover {
-    transform: scale(1.01); /* Slightly increase size on hover */
-    /*box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); !* Add shadow on hover *!*/
-}
-
 .project img {
     width: 100%;
     height: auto;
-    border-radius: 10px;
 }
-
 .project h3 {
-    margin-top: 15px;
-    font-size: 1.4em;
-    color: #002b49;
+    margin: 15px 0 5px;
+    font-size: 1.2em;
 }
-
 .project p {
-    font-size: 1.1em;
-    color: #666;
+    margin-bottom: 15px;
+    color: #777;
+}
+.project-link {
+    text-decoration: none; /* Removes the underline */
+    color: inherit; /* Keeps the text color as it is */
 }
 
 .arrow-buttons {
@@ -505,7 +469,6 @@ body {
     justify-content: center;
     gap: 20px;
 }
-
 .carousel-arrow {
     width: 50px;
     height: 50px;
@@ -520,16 +483,20 @@ body {
     color: #999; /* Initial grey color for arrow icon */
     font-size: 1.5em;
 }
-
 .carousel-arrow:hover {
     background-color: #c59542; /* Change background color on hover */
-    border-color: #a47630; /* Darker shade for the border on hover */
     color: #fff; /* White color for the arrow icon on hover */
 }
 
-.carousel-arrow:focus {
-    outline: none;
-}
+
+
+
+
+
+
+
+
+/* Styling for the Blogs Section */
 .blogs-news {
     font-family: 'Wittgenstein', serif;
     text-align: center;
@@ -550,35 +517,27 @@ body {
     gap: 20px;
 }
 
-.blogs-news-title::before,
-.blogs-news-title::after {
-    content: "";
-    width: 425px; /* Adjust this value to decrease or increase line length */
-    height: 1px;
-    background: #000;
-}
-
 .blogs-news-subtitle {
     font-size: 1.2em;
     color: #333;
     margin-bottom: 30px;
 }
 
-.carousel-container {
+.carousel-container-blogs {
     position: relative;
     max-width: 1000px;
     margin: 0 auto;
     overflow: hidden;
 }
 
-.carousel {
+.carousel-blogs {
     display: flex;
     transition: transform 0.5s ease-in-out;
     will-change: transform;
 }
 
 .blog-post {
-    flex: 0 0 33%; /* Default - display 3 blog posts at a time */
+    flex: 0 0 calc(100% / 3); /* Only 3 blog posts are visible at a time */
     box-sizing: border-box;
     padding: 0 20px;
     display: flex;
@@ -593,7 +552,6 @@ body {
     border-radius: 10px;
     background-color: #f0f0f0; /* Adds a background color in case the aspect ratio leaves blank spaces */
 }
-
 
 .blog-post h3 {
     margin-top: 15px;
@@ -623,18 +581,32 @@ body {
     color: #999; /* Initial grey color for arrow icon */
     font-size: 1.5em;
 }
+
+.carousel-arrow:hover {
+    background-color: #c59542; /* Change background color on hover */
+    color: #fff; /* White color for the arrow icon on hover */
+}
+/* Ensure the link styling is uniform across all states */
 .blogs-news a {
-    color: #fff; /* Initial link color */
-    text-decoration: none; /* Remove underline */
+    color: #002b49; /* Set a desired color for the links */
+    text-decoration: none; /* Remove the underline */
 }
 
 .blogs-news a:visited {
-    color: #fff; /* Ensure visited links stay the same color */
+    color: #002b49; /* Keep the same color for visited links */
+    text-decoration: none; /* Remove the underline for visited links as well */
 }
 
 .blogs-news a:hover {
-    color: #c59542; /* Gold-like color on hover */
+    color: #c59542; /* Change color on hover to the gold-like color */
+    text-decoration: none; /* Make sure no underline appears on hover */
 }
+
+.blogs-news a:active {
+    color: #c59542; /* Change color for the active link state as well */
+    text-decoration: none; /* Keep it consistent */
+}
+
 .contact-section {
     font-family: 'Wittgenstein', serif;
     display: flex;
@@ -814,6 +786,7 @@ form {
     font-size: 0.9em;
     color: #cabdbd;
 }
+/* Base Styles (Desktop) */
 .blog-detail-container {
     max-width: 1500px; /* Increased the max-width to make the box larger */
     margin: 50px auto;
@@ -836,7 +809,7 @@ form {
 }
 
 .blog-title {
-    font-size: 2.8em; /* Adjusted to make the title larger */
+    font-size: 2em; /* Adjusted to make the title larger */
     color: #002b49;
     margin-bottom: 15px;
     font-weight: 700;
@@ -869,7 +842,43 @@ form {
     text-align: justify;
 }
 
+/* Mobile Styles */
+@media (max-width: 768px) {
+    .blog-detail-container {
+        max-width: 100%; /* Make container full width */
+        margin: 20px auto;
+        padding: 0 15px; /* Reduce padding for smaller screens */
+    }
 
+    .blog-header {
+        padding: 20px 10px;
+    }
+
+    .blog-title {
+        font-size: 1.5em; /* Decrease title size for mobile */
+        margin-bottom: 10px;
+    }
+
+    .blog-date {
+        font-size: 0.9em; /* Slightly smaller date text */
+    }
+
+    .blog-image-container {
+        margin: 20px auto;
+        max-width: 100%; /* Allow image to take full width */
+    }
+
+    .blog-image {
+        max-height: none; /* Remove height limit for mobile */
+        border-radius: 8px;
+    }
+
+    .blog-content {
+        padding: 20px 10px; /* Reduce padding */
+        font-size: 1em; /* Adjust font size for readability */
+        line-height: 1.6;
+    }
+}
 /* Header Section */
 .header-section {
     width: 100%;
@@ -1023,4 +1032,79 @@ form {
     max-height: 400px; /* Optional: Set a max height to control the image size */
     object-fit: cover; /* Makes sure the image fits within the container */
     display: block;
+}
+
+/* Responsive Styles for Mobile View */
+@media (max-width: 768px) {
+    .header-section {
+    width: 100%;
+}
+
+    /* Adjust padding for smaller screens */
+    .projects-section {
+        padding: 30px 10px;
+    }
+
+    /* Reduce title font size */
+    .projects-title {
+        font-size: 1.5em;
+    }
+
+    /* Stack project cards vertically */
+    .project-cards-container {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    /* Adjust project card layout */
+    .project-card {
+        flex-direction: column;
+        max-width: 100%;
+        margin: 10px 0;
+        flex: 1 1 100%;
+    }
+
+    /* Make image and details full width */
+    .project-image-container,
+    .project-details {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+
+    .project-details {
+        padding: 15px;
+    }
+
+    /* Reduce font sizes */
+    .project-title {
+        font-size: 1.2em;
+    }
+
+    /* Adjust button sizes */
+    .view-details-btn,
+    .enquire-btn {
+        padding: 8px 15px;
+        font-size: 0.9em;
+    }
+
+    /* Stack buttons vertically */
+    .project-buttons {
+        flex-direction: column;
+    }
+
+    .view-details-btn,
+    .enquire-btn {
+        flex: 1 1 100%;
+        margin-bottom: 10px;
+    }
+
+    .project-buttons a:last-child {
+        margin-bottom: 0;
+    }
+
+    /* Reduce image heights */
+
+    .projects-footer-image-content {
+        max-height: 200px;
+    }
 }

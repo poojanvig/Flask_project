@@ -78,45 +78,45 @@
             </div>
         </div>
 
-<!--&lt;!&ndash;        Shree Mahalkshmi Trinity&ndash;&gt;-->
-<!--        <div class="project-card">-->
-<!--            <div class="project-image-container">-->
-<!--                <img src="{{ url_for('static', filename='images/project1.png') }}" alt="Shree Mahalkshmi Trinity" class="project-image">-->
-<!--            </div>-->
-<!--            <div class="project-details">-->
-<!--                <h3 class="project-title">Shree Mahalkshmi Trinity</h3>-->
-<!--                <div class="project-location">-->
-<!--                    <span class="project-location-icon">📍</span> Mahim West-->
-<!--                </div>-->
-<!--                <hr class="project-separator">-->
-<!--                <p>Current Status: Upcomming Projects</p>-->
-<!--                <br>-->
-<!--                <div class="project-buttons">-->
-<!--                    <a href="#" class="view-details-btn">View Project Details</a>-->
-<!--                    <a href="#" class="enquire-btn">Enquire</a>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
+<!--        Shree Mahalkshmi Trinity-->
+        <div class="project-card">
+            <div class="project-image-container">
+                <img src="{{ url_for('static', filename='images/project1.png') }}" alt="Shree Mahalkshmi Trinity" class="project-image">
+            </div>
+            <div class="project-details">
+                <h3 class="project-title">Shree Mahalkshmi Trinity</h3>
+                <div class="project-location">
+                    <span class="project-location-icon">📍</span> Mahim West
+                </div>
+                <hr class="project-separator">
+                <p>Current Status: Upcomming Projects</p>
+                <br>
+                <div class="project-buttons">
+                     <a href="{{ url_for('trinity_project') }}" class="view-details-btn">View Project Details</a>
+                    <a href="{{ url_for('index') }}#contact-section" class="enquire-btn">Enquire</a>
+                </div>
+            </div>
+        </div>
 
 <!--        Shree Mahalakshmi Saburi-->
-<!--         <div class="project-card">-->
-<!--            <div class="project-image-container">-->
-<!--                <img src="{{ url_for('static', filename='projects/saburi/2.png') }}" alt="Shree Mahalakshmi Saburi" class="project-image">-->
-<!--            </div>-->
-<!--            <div class="project-details">-->
-<!--                <h3 class="project-title">Shree Mahalakshmi Saburi</h3>-->
-<!--                <div class="project-location">-->
-<!--                    <span class="project-location-icon">📍</span> Santacruz East-->
-<!--                </div>-->
-<!--                <hr class="project-separator">-->
-<!--                <p>Current Status: Upcomming Projects</p>-->
-<!--                <br>-->
-<!--                <div class="project-buttons">-->
-<!--                    <a href="#" class="view-details-btn">View Project Details</a>-->
-<!--                    <a href="#" class="enquire-btn">Enquire</a>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
+         <div class="project-card">
+            <div class="project-image-container">
+                <img src="{{ url_for('static', filename='projects/saburi/2.png') }}" alt="Shree Mahalakshmi Saburi" class="project-image">
+            </div>
+            <div class="project-details">
+                <h3 class="project-title">Shree Mahalakshmi Saburi</h3>
+                <div class="project-location">
+                    <span class="project-location-icon">📍</span> Santacruz East
+                </div>
+                <hr class="project-separator">
+                <p>Current Status: Upcomming Projects</p>
+                <br>
+                <div class="project-buttons">
+                    <a href="{{ url_for('saburi_project') }}" class="view-details-btn">View Project Details</a>
+                    <a href="{{ url_for('index') }}#contact-section" class="enquire-btn">Enquire</a>
+                </div>
+            </div>
+        </div>
 
 
     </div>
@@ -124,5 +124,32 @@
 <section class="projects-footer-image">
     <img src="{{ url_for('static', filename='images/Project-foot.webp') }}" alt="Footer Image" class="projects-footer-image-content">
 </section>
+<script>
+    function adjustEnquireLinks() {
+        // Define your breakpoint (e.g., 768px for mobile)
+        var mobileBreakpoint = 768;
+        var isMobile = window.innerWidth <= mobileBreakpoint;
+
+        // Select all elements with the class 'enquire-btn'
+        var enquireButtons = document.querySelectorAll('.enquire-btn');
+
+        // Loop through each Enquire button and update the href
+        enquireButtons.forEach(function(button) {
+            if (isMobile) {
+                // On mobile view, link to '#mobile-contact-info'
+                button.setAttribute('href', '{{ url_for('index') }}#mobile-contact-info');
+            } else {
+                // On desktop view, link to '#contact-section'
+                button.setAttribute('href', '{{ url_for('index') }}#contact-section');
+            }
+        });
+    }
+
+    // Run the function on page load
+    document.addEventListener('DOMContentLoaded', adjustEnquireLinks);
+
+    // Run the function on window resize
+    window.addEventListener('resize', adjustEnquireLinks);
+</script>
 
 {% endblock %}
