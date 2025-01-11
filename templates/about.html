@@ -16,6 +16,13 @@ body {
     line-height: 1.6;
     color: #333;
 }
+@font-face {
+  font-family: 'TAN Aegean';
+  src: url('/assets/TAN-AEGEAN-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
 
 /* Hero Section */
 .hero-image-container {
@@ -168,6 +175,21 @@ body {
     margin-bottom: 40px;
 }
 
+.management-title{
+ font-family: 'TAN Aegean', serif; /* or a fallback serif if needed */
+  font-size: 1em;                   /* adjust as needed */
+  font-weight: 50;                 /* or 700 if you have a bold version */
+  margin: 0.2em 0;
+  color: #333;
+    text-align: center
+}
+.management-subtitle {
+  font-size: 1.2em;
+  font-weight: 500;
+  margin: 0.2em 0 0.5em 0;
+  color: #888888;
+  text-align: center;  /* only the subtitle is centered */
+}
 .management-container {
     display: flex;
     flex-direction: column;
@@ -387,39 +409,41 @@ body {
     <section class="management-section">
         <h2 class="management-heading">Key Management Personnel</h2>
 
-        <!-- Management Profiles -->
-        <div class="management-container">
-            <!-- Hiren Sunil Wadhare -->
-            <div class="management-profile">
-                <img src="/static/images/profile_face.jpeg" alt="Hiren Sunil Wadhare">
-                <div class="management-details">
-                    <h3>Hiren Sunil Wadhare</h3>
-                    <h4>Founder & Managing Partner</h4>
-                    <p>He holds a Master’s and Bachelor’s degree in Management Studies from the University of Mumbai. Coming from a Family Business Background, Mr. Hiren Sunil Wadhare is a third-generation property developer who had been with his grandfather, father and uncle on their family construction sites from his childhood days which helped him gain an experience of onsite work and thereby being a good listener and an excellent observer which helped him start Shree Mahalakshmi Constructions at the age of 23.
-                    He has 2 years of experience for working in Abu Dhabi Commercial Bank at Dubai as a Relationship Officer that has helped him acquire amazing sales technique and handle difficult situation or queries in dealing with Investors, Land Owners and Customers. He has 10+ years of experience in various aspects of Real Estate Business. </p>
-                </div>
-            </div>
-
-            <!-- Mrs. Leena Sunil Wadhare  -->
-            <div class="management-profile">
-                <img src="/static/images/profile_face.jpeg" alt="Leena Sunil Wadhare">
-                <div class="management-details">
-                    <h3>Mrs. Leena Sunil Wadhare</h3>
-                    <h4>Founder & Partner</h4>
-                <p>She holds a bachelor’s degree in Commerce from the University of Mumbai. She has been associated with the company since its incorporation. She has over 25 years of experience in different aspects of her entrepreneurial journey and 10 years of experience in various aspects from real estate business.</p>
-                </div>
-            </div>
-
-            <!-- Mr. Sunil Meghraj Wadhare -->
-            <div class="management-profile">
-                <img src="/static/images/profile_face.jpeg" alt="Mr. Sunil Meghraj Wadhare">
-                <div class="management-details">
-                    <h3>Mr. Sunil Meghraj Wadhare</h3>
-                    <h4>Co- Founder & Chief Executive Officer</h4>
-                    <p>Mr. Sunil Meghraj Wadhare is the Chief Executive Officer at Shree Mahalakshmi Constructions where he leads all the site management and operations for Mumbai. He has been associated with the company since its incorporation. He has overall 40 years of experience in the different aspects of business. Mr. Sunil Started his career by starting a Steel Manufacturing unit in the outskirts of Mumbai which is an essential product for the construction of buildings. He has vast experience of more than 35+ years in the steel industry and was also managing 3 steel manufacturing units spanning over an acre each simultaneously. </p>
-                </div>
+    <div class="management-container">
+        <!-- Hiren Sunil Wadhare -->
+        <div class="management-profile">
+            <div class="management-details">
+                <h3 class="management-title">Hiren Sunil Wadhare</h3>
+                <h4 class="management-subtitle">Founder & Managing Partner</h4>
+                <p class="management-description">
+                    He holds a Master’s and Bachelor’s degree in Management Studies from the University of Mumbai. Coming from a Family Business Background, Mr. Hiren Sunil Wadhare is a third-generation property developer who had been with his grandfather, father, and uncle on their family construction sites since childhood. This experience helped him gain onsite knowledge and develop excellent listening and observation skills—ultimately enabling him to start Shree Mahalakshmi Constructions at the age of 23.
+                    <br><br>
+                    He also has 2 years of experience working in Abu Dhabi Commercial Bank in Dubai as a Relationship Officer, which helped him hone exceptional sales techniques. He has over 10 years of experience in various aspects of the Real Estate business.
+                </p>
             </div>
         </div>
+
+                <div class="management-profile">
+            <div class="management-details">
+                <h3 class="management-title">Mrs. Leena Sunil Wadhare</h3>
+                <h4 class="management-subtitle">Founder & Partner</h4>
+                <p class="management-description">
+                    She holds a bachelor’s degree in Commerce from the University of Mumbai. She has been associated with the company since its incorporation. She has over 25 years of experience in different aspects of her entrepreneurial journey and 10 years of experience in various aspects from real estate business.
+                </p>
+            </div>
+        </div>
+
+                <div class="management-profile">
+            <div class="management-details">
+                <h3 class="management-title">Mr. Sunil Meghraj Wadhare</h3>
+                <h4 class="management-subtitle">Co- Founder & Chief Executive Officer</h4>
+                <p class="management-description">
+                    Mr. Sunil Meghraj Wadhare is the Chief Executive Officer at Shree Mahalakshmi Constructions where he leads all the site management and operations for Mumbai. He has been associated with the company since its incorporation. He has overall 40 years of experience in the different aspects of business. Mr. Sunil Started his career by starting a Steel Manufacturing unit in the outskirts of Mumbai which is an essential product for the construction of buildings. He has vast experience of more than 35+ years in the steel industry and was also managing 3 steel manufacturing units spanning over an acre each simultaneously.
+                    </p>
+            </div>
+        </div>
+    </div>
+
 
         <!-- Footer Image Section -->
         <img src="/static/images/aboutfoot.png" alt="Footer Image" class="management-footer-image">
