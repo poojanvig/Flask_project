@@ -18,8 +18,8 @@
         .hero {
             position: relative;
             width: 100%;
-            height: 80vh;
-            background-image: url('/static/projects/trinity/trinityHero.png?height=800&width=1200');
+            height: 90vh;
+            background-image: url('/static/projects/saburi/hero.png');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -34,9 +34,56 @@
             height: 100px;
             /*background: linear-gradient(to top, white, transparent);*/
         }
+        .hero-content {
+            position: absolute;
+            top: 20%;
+            left: 5%;
+            transform: translate(-5%, -15%);
+
+
+            color: #002b49;
+            text-align: left;
+            max-width: 650px;
+        }
+
+        .hero-content h1 {
+            font-size: 2em;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #002b49; /* Dark blue color for heading */
+        }
+
+        .hero-content p {
+            /*font-size: 1.1em;*/
+            margin-bottom: 20px;
+        }
+ @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-content h1, .hero-content p, .enquire-button {
+            opacity: 0;
+            animation: fadeIn 1s ease-in-out forwards;
+        }
+
+        .hero-content h1 {
+            animation-delay: 0.5s;
+        }
+
+        .hero-content p {
+            animation-delay: 1s;
+        }
+
 
         .project-overview {
-            max-width: 1200px;
+            max-width: 1300px;
             margin: 0 auto;
             padding: 40px 20px;
         }
@@ -81,7 +128,7 @@
             padding: 40px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
             background-color: white;
-            max-width: 900px;
+            max-width: 1300px;
             margin: 0 auto;
         }
 
@@ -132,24 +179,84 @@
             transform: scale(1.02);
         }
 
-        .floor-plans-section {
-            max-width: 950px;
-            margin: 40px auto;
-            padding: 0 20px;
-        }
 
-        .floor-label {
-            text-align: center;
-            margin-top: 15px;
-            font-size: 14px;
-            font-weight: 500;
-            text-transform: uppercase;
-            color: #333;
-        }
+.floor-plans-section {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.content-box {
+  background-color: white;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.plan-title {
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+.floor-plans {
+  /*display: grid;*/
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 50px; /* Increased from 30px to 50px for more spacing */
+}
+
+.plan-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.image-wrapper {
+  width: 110%;
+  /*aspect-ratio: 5 / 4;*/
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.plan-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.plan-image:hover {
+  transform: scale(1.05);
+}
+
+.floor-label {
+  margin-top: 15px;
+  font-size: 14px;
+  font-weight: 500;
+  text-align: center;
+  text-transform: uppercase;
+  color: #333;
+}
+
+@media (max-width: 768px) {
+  .floor-plans {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+}
+
+@media (max-width: 480px) {
+  .floor-plans {
+    grid-template-columns: 1fr;
+  }
+}
+
 
         /* Amenities Section */
         .amenities-section {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
             padding: 64px 20px;
         }
@@ -418,31 +525,38 @@
     </style>
 </head>
 <body>
-    <section class="hero"></section>
-    
+    <section class="hero">
+            <div class="hero-content">
+            <h1>Shree Mahalakshmi Saburi</h1>
+            <p>Apartments in Santacruz East </p>
+            <p>Total Number of Flats: 20 (2 flats per floor)</p>
+            <p>Net Plot Area: 362.88 Sq. Meters</p></p>
+        </div>
+    </section>
+
     <section class="project-overview">
         <div class="tabs">
             <div class="tab active" data-tab="overview">Project Overview</div>
-            <div class="tab" data-tab="amenities">Amenities</div>
+<!--            <div class="tab" data-tab="amenities">Amenities</div>-->
             <div class="tab" data-tab="rera">Rera Numbers</div>
         </div>
-        
+
         <div class="content-box">
             <div class="tab-content active" id="overview">
-                Located at Sitladevi Temple Road, Mahim West, this residency features a modern structure with 20 units spread across 10 floors, each designed with meticulous attention to detail to ensure maximum comfort.
+               Located at Nehru Junction Road in Santacruz East, this project comprises 20 residential units thoughtfully distributed across 10 floors (plus a stilt level). Each flat is designed with careful attention to optimize space, comfort, and natural light.
             </div>
 
-            <div class="tab-content" id="amenities">
-                <ul style="list-style: none;">
-                    <li>24/7 Security</li>
-                    <li>Rooftop Garden</li>
-                    <li>Modern Fitness Center</li>
-                    <li>Underground Parking</li>
-                    <li>Children's Play Area</li>
-                    <li>High-speed Elevators</li>
-                </ul>
-            </div>
-            
+<!--            <div class="tab-content" id="amenities">-->
+<!--                <ul style="list-style: none;">-->
+<!--                    <li>24/7 Security</li>-->
+<!--                    <li>Rooftop Garden</li>-->
+<!--                    <li>Modern Fitness Center</li>-->
+<!--                    <li>Underground Parking</li>-->
+<!--                    <li>Children's Play Area</li>-->
+<!--                    <li>High-speed Elevators</li>-->
+<!--                </ul>-->
+<!--            </div>-->
+
             <div class="tab-content" id="rera">
                 <p>RERA Registration Number: MH/Mumbai/12345/2023</p>
                 <p>Project Registration Date: 01/01/2023</p>
@@ -456,39 +570,39 @@
             <h2 class="plan-title">FLOOR PLAN</h2>
             <div class="floor-plans">
                 <div class="plan-container">
-                    <img src="/static/projects/trinity/3.png?height=800&width=1000" alt="2nd & 3rd Floor Plan" class="plan-image">
-                    <p class="floor-label">2ND & 3RD FLOOR PLAN</p>
+                    <div class="image-wrapper">
+                        <img src="/static/projects/saburi/floor.png" alt="2nd & 3rd Floor Plan" class="plan-image">
+                    </div>
+                    <p class="floor-label">SABURI FLOOR PLAN</p>
                 </div>
-                <div class="plan-container">
-                    <img src="/static/projects/trinity/3.png?height=800&width=1000" alt="5th & 6th Floor Plan" class="plan-image">
-                    <p class="floor-label">5TH & 6TH FLOOR PLAN</p>
-                </div>
-            </div>
+
         </div>
     </section>
 
     <section class="amenities-section">
+        <h2 class="faq-title">Amenities</h2>
         <div class="amenities-grid">
             <div class="amenity-item">
-                <i class="fas fa-swimming-pool amenity-icon"></i>
-                <span class="amenity-label">Swimming Pool</span>
-            </div>
-            <div class="amenity-item">
-                <i class="fas fa-users amenity-icon"></i>
-                <span class="amenity-label">Sitting Area</span>
+                <i class="fas fa-elevator amenity-icon"></i>
+                <span class="amenity-label">High Speed Elevators</span>
             </div>
             <div class="amenity-item">
                 <i class="fas fa-car amenity-icon"></i>
                 <span class="amenity-label">Parking</span>
             </div>
             <div class="amenity-item">
-                <i class="fas fa-child amenity-icon"></i>
-                <span class="amenity-label">kids Play Area</span>
+                <i class="fas fa-compass amenity-icon"></i>
+                <span class="amenity-label">Vastu Compliant</span>
             </div>
             <div class="amenity-item">
-                <i class="fas fa-elevator amenity-icon"></i>
-                <span class="amenity-label">High Speed Elevators</span>
+                <i class="fas fa-shield-alt amenity-icon"></i>
+                <span class="amenity-label">24/7 Security CCTV</span>
             </div>
+            <div class="amenity-item">
+                <i class="fas fa-couch amenity-icon"></i>
+                <span class="amenity-label">Lobby</span>
+            </div>
+
         </div>
     </section>
 
@@ -498,48 +612,46 @@
             <div class="accordion-row">
                 <div class="accordion-item">
                     <div class="accordion-header">
-                        WHAT IS THE STARTING PRICE OF SHREE MAHALAKSHMI TRINITY?
+                         What is the starting price of Saburi?
                         <i class="fas fa-plus"></i>
                     </div>
                     <div class="accordion-content">
                         <div class="accordion-content-inner">
-                            Please contact our sales team for current pricing information.
+                            Pricing may vary based on current market conditions; please contact our sales team for the most up-to-date pricing.
                         </div>
                     </div>
                 </div>
                 <div class="accordion-item">
                     <div class="accordion-header">
-                        WHERE IS SHREE MAHALAKSHMI TRINITY LOCATED?
+                        Where is Saburi located?
                         <i class="fas fa-plus"></i>
                     </div>
                     <div class="accordion-content">
                         <div class="accordion-content-inner">
-                            Shree Mahalakshmi Trinity is located at Sitladevi Temple Road, Mahim West, Mumbai.
-                        </div>
+                        Saburi is located at Nehru Junction Road, Santacruz East, Mumbai – 400055, offering convenient access to key areas of the city.                        </div>
                     </div>
                 </div>
             </div>
             <div class="accordion-row">
                 <div class="accordion-item">
                     <div class="accordion-header">
-                        WHAT IS THE TOTAL AREA SIZE OF SHREE MAHALAKSHMI TRINITY?
+                        What is the total area size of Saburi?
                         <i class="fas fa-plus"></i>
                     </div>
                     <div class="accordion-content">
                         <div class="accordion-content-inner">
-                            The project features multiple unit configurations. Please contact our sales team for specific area details.
+                        The net plot area spans 362.88 Sq. Meters, ensuring ample space for comfortable living.
                         </div>
                     </div>
                 </div>
                 <div class="accordion-item">
                     <div class="accordion-header">
-                        WHAT ARE THE KEY AMENITIES AT SHREE MAHALAKSHMI TRINITY?
+                        What are the key amenities at Saburi?
                         <i class="fas fa-plus"></i>
                     </div>
                     <div class="accordion-content">
                         <div class="accordion-content-inner">
-                            Key amenities include Swimming Pool, Sitting Area, Parking, Kids Play Area, and High Speed Elevators among others.
-                        </div>
+                        Key amenities include high-speed elevators, designated parking, a sky deck with seating, and 24/7 security with CCTV, among others.                        </div>
                     </div>
                 </div>
             </div>
@@ -661,7 +773,7 @@
             tab.addEventListener('click', () => {
                 document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
                 document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
-                
+
                 tab.classList.add('active');
                 document.getElementById(tab.dataset.tab).classList.add('active');
             });
@@ -672,7 +784,7 @@
             header.addEventListener('click', () => {
                 const content = header.nextElementSibling;
                 const icon = header.querySelector('i');
-                
+
                 // Close all other accordion items
                 document.querySelectorAll('.accordion-content').forEach(item => {
                     if (item !== content) {
