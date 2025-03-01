@@ -47,7 +47,7 @@
 <!-- Stay Updated Section -->
 <section class="stay-updated">
     <h2 class="stay-updated-title">STAY UPDATED</h2>
-    <p>Keep up with the latest in real estate in Mumbai and developments at Shree Mahalakshmi Constructions</p>
+<!--    <p>Keep up with the latest in real estate in Mumbai and developments at Shree Mahalakshmi Constructions</p>-->
     <form action="{{ url_for('stay_updated') }}" method="POST">
         <input type="hidden" name="form-name" value="stay-updated">
         <div class="subscription-form">
@@ -62,7 +62,7 @@
 
     <section class="locate">
         <h2 class="locate-title">LOCATE US</h2>
-        <p class="locate-subtitle">We have built 7+ projects across the residential segment</p>
+<!--        <p class="locate-subtitle">We have built 7+ projects across the residential segment</p>-->
         <div class="locate-image">
             <img src="{{ url_for('static', filename='images/locateuscorrect.png') }}" alt="Locate Us Map" class="map-image">
         </div>
@@ -77,7 +77,6 @@
 
     <section class="featured-projects">
         <h2 class="locate-title">FEATURED PROJECTS</h2>
-        <p>We have built 42+ projects across residential and commercial segments</p>
         <div class="projects-container">
             <div class="projects-wrapper">
                 <div class="projects" id="projects">
@@ -145,7 +144,7 @@
 <!--    Blogs section-->
     <section id="blogs" class="blogs-news">
     <h2 class="locate-title">BLOGS AND NEWS</h2>
-    <p class="blogs-news-subtitle">Read our latest blogs to stay informed</p>
+        <br>
     <div class="carousel-container-blogs">
         <div class="carousel-blogs">
             {% for post in blog_posts %}
@@ -254,7 +253,7 @@
     <section class="stay-updated-mobile">
 
         <h2 class="stay-updated-mobile-title">STAY UPDATED</h2>
-        <p>Keep up with the latest in real estate in Mumbai and developments at Shree Mahalakshmi Constructions</p>
+<!--        <p>Keep up with the latest in real estate in Mumbai and developments at Shree Mahalakshmi Constructions</p>-->
             <form action="{{ url_for('stay_updated') }}" method="POST">
             <input type="hidden" name="form-name" value="stay-updated">
             <div class="subscription-form-mobile">
@@ -271,7 +270,7 @@
     <!-- Locate Us Section -->
     <section class="locate-us">
         <h2 class="locate-us-title">LOCATE US</h2>
-        <p>We have built 7+ projects across residential segment</p>
+<!--        <p>We have built 7+ projects across residential segment</p>-->
     </section>
 
     <!-- Map Section -->
@@ -283,7 +282,8 @@
 
 <section class="mobile-featured-projects">
     <h2 class="mobile-featured-projects-title">FEATURED PROJECTS</h2>
-    <p class="mobile-featured-projects-subtitle">We have built 42+ projects across residential and commercial segments</p>
+    <br>
+<!--    <p class="mobile-featured-projects-subtitle">We have built 42+ projects across residential and commercial segments</p>-->
     <div class="mobile-carousel-container">
         <div class="mobile-carousel">
             <a href="{{ url_for('Sumitra_project') }}" class="mobile-project-link">
@@ -337,7 +337,7 @@
 
 <section id="mobile-blogs" class="mobile-blogs-news">
     <h2 class="mobile-blogs-news-title">BLOGS AND NEWS</h2>
-    <p class="mobile-blogs-news-subtitle">Read our latest blogs to stay informed</p>
+<!--    <p class="mobile-blogs-news-subtitle">Read our latest blogs to stay informed</p>-->
     <div class="mobile-carousel-container">
         <div class="mobile-carousel-blog">
             {% for post in blog_posts %}
